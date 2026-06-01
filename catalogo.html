@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Catálogo | IMPERADOR Hardware Store</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#ffb800",
+                      "on-secondary": "#ffffff",
+                      "primary-fixed": "#ffdea8",
+                      "tertiary-fixed-dim": "#aac7ff",
+                      "tertiary-fixed": "#d7e3ff",
+                      "surface-container": "#e5eeff",
+                      "tertiary": "#055cb9",
+                      "on-surface-variant": "#514532",
+                      "on-primary": "#ffffff",
+                      "surface-container-lowest": "#ffffff",
+                      "surface-container-highest": "#d3e4fe",
+                      "on-surface": "#0b1c30",
+                      "background": "#f8f9ff",
+                      "on-secondary-fixed-variant": "#474746",
+                      "secondary-container": "#e2dfde",
+                      "on-primary-container": "#6b4c00",
+                      "on-primary-fixed": "#271900",
+                      "on-secondary-fixed": "#1c1b1b",
+                      "surface-container-low": "#eff4ff",
+                      "error-container": "#ffdad6",
+                      "on-tertiary-container": "#004fa1",
+                      "secondary-fixed-dim": "#c8c6c5",
+                      "on-error-container": "#93000a",
+                      "surface-container-high": "#dce9ff",
+                      "surface-bright": "#f8f9ff",
+                      "on-secondary-container": "#636262",
+                      "inverse-on-surface": "#eaf1ff",
+                      "inverse-surface": "#213145",
+                      "inverse-primary": "#ffba20",
+                      "outline-variant": "#d5c4ab",
+                      "surface-variant": "#d3e4fe",
+                      "on-primary-fixed-variant": "#5e4200",
+                      "error": "#ba1a1a",
+                      "surface": "#f8f9ff",
+                      "secondary-fixed": "#e5e2e1",
+                      "secondary": "#5f5e5e",
+                      "on-background": "#0b1c30",
+                      "tertiary-container": "#a7c5ff",
+                      "surface-dim": "#cbdbf5",
+                      "on-tertiary-fixed-variant": "#00458e",
+                      "outline": "#837560",
+                      "surface-tint": "#7c5800",
+                      "on-tertiary-fixed": "#001b3e",
+                      "on-error": "#ffffff",
+                      "primary": "#7c5800",
+                      "primary-fixed-dim": "#ffba20",
+                      "on-tertiary": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "lg": "48px",
+                      "xs": "4px",
+                      "sm": "12px",
+                      "base": "8px",
+                      "md": "24px",
+                      "margin-desktop": "64px",
+                      "xl": "80px",
+                      "gutter": "24px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "label-md": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg": ["Archivo Narrow"],
+                      "headline-lg-mobile": ["Archivo Narrow"],
+                      "body-sm": ["Inter"],
+                      "label-sm": ["Inter"],
+                      "headline-md": ["Archivo Narrow"],
+                      "headline-xl": ["Archivo Narrow"],
+                      "body-lg": ["Inter"],
+                      "headline-sm": ["Archivo Narrow"]
+              },
+              "fontSize": {
+                      "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "700"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hard-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(11, 28, 48, 1);
+        }
+        .active-tab {
+            box-shadow: inset 0 -4px 0 0 #7c5800;
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f8f9ff; }
+        ::-webkit-scrollbar-thumb { background: #d5c4ab; border-radius: 4px; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24 md:pb-0">
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface-dim text-primary dark:text-primary-fixed-dim border-b-2 border-outline-variant dark:border-outline w-full top-0 z-50 sticky">
+<div class="flex items-center justify-between px-margin-mobile md:px-margin-desktop w-full h-16 max-w-screen-2xl mx-auto">
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined cursor-pointer active:translate-y-0.5 transition-transform">menu</span>
+<div class="flex items-center gap-xs">
+<h1 class="font-headline-md text-headline-md font-bold tracking-tighter text-primary dark:text-primary-fixed-dim">IMPERADOR</h1>
+</div>
+</div>
+<!-- Desktop Search Bar -->
+<div class="hidden md:flex flex-1 max-w-xl mx-xl">
+<div class="relative w-full">
+<input class="w-full bg-surface-container-low border-2 border-outline-variant px-md py-xs font-body-sm focus:border-primary focus:ring-0 outline-none transition-colors" placeholder="Buscar ferramentas, máquinas e acessórios..." type="text"/>
+<span class="material-symbols-outlined absolute right-3 top-2 text-secondary">search</span>
+</div>
+</div>
+<div class="flex items-center gap-md">
+<span class="material-symbols-outlined cursor-pointer md:hidden active:translate-y-0.5 transition-transform">search</span>
+<div class="relative cursor-pointer group">
+<span class="material-symbols-outlined active:translate-y-0.5 transition-transform">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-primary-container text-on-primary-container text-[10px] font-bold px-1.5 rounded-full border border-on-surface">3</span>
+</div>
+<span class="hidden md:block material-symbols-outlined cursor-pointer active:translate-y-0.5 transition-transform">person</span>
+</div>
+</div>
+</header>
+<main class="max-w-screen-2xl mx-auto flex flex-col md:flex-row gap-gutter px-margin-mobile md:px-margin-desktop py-md">
+<!-- Desktop Sidebar Filters -->
+<aside class="hidden md:flex flex-col w-72 shrink-0 gap-lg">
+<!-- Category Navigation -->
+<section class="bg-surface border-2 border-outline-variant p-md">
+<h3 class="font-headline-sm text-headline-sm mb-md text-on-surface">CATEGORIAS</h3>
+<nav class="flex flex-col">
+<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">whatshot</span>
+<span class="font-label-md text-label-md uppercase">Soldas</span>
+</a>
+<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 bg-primary-container text-on-primary-container font-bold border-l-4 border-primary" href="#">
+<span class="material-symbols-outlined">handyman</span>
+<span class="font-label-md text-label-md uppercase">Ferramentas Elétricas</span>
+</a>
+<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">hardware</span>
+<span class="font-label-md text-label-md uppercase">Fixação</span>
+</a>
+<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">precision_manufacturing</span>
+<span class="font-label-md text-label-md uppercase">Máquinas</span>
+</a>
+<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="#">
+<span class="material-symbols-outlined">sell</span>
+<span class="font-label-md text-label-md uppercase">Ofertas Especiais</span>
+</a>
+</nav>
+</section>
+<!-- Brand Filter -->
+<section class="bg-surface border-2 border-outline-variant p-md">
+<h3 class="font-headline-sm text-headline-sm mb-md text-on-surface border-b-2 border-outline-variant pb-xs">MARCAS</h3>
+<div class="space-y-sm">
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 border-2 border-outline bg-surface-container-low text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-md group-hover:text-primary transition-colors">Makita</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 border-2 border-outline bg-surface-container-low text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-md group-hover:text-primary transition-colors">Bosch</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 border-2 border-outline bg-surface-container-low text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-md group-hover:text-primary transition-colors">DeWalt</span>
+</label>
+<label class="flex items-center gap-sm cursor-pointer group">
+<input class="w-5 h-5 border-2 border-outline bg-surface-container-low text-primary focus:ring-0" type="checkbox"/>
+<span class="font-body-md group-hover:text-primary transition-colors">Milwaukee</span>
+</label>
+</div>
+</section>
+<!-- Price Filter -->
+<section class="bg-surface border-2 border-outline-variant p-md">
+<h3 class="font-headline-sm text-headline-sm mb-md text-on-surface border-b-2 border-outline-variant pb-xs">PREÇO</h3>
+<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+<div class="flex justify-between mt-sm text-label-sm font-label-sm text-secondary">
+<span>R$ 0</span>
+<span>R$ 5000+</span>
+</div>
+</section>
+</aside>
+<!-- Main Product Canvas -->
+<div class="flex-1">
+<!-- Mobile Filters Horizontal (Scrollable) -->
+<div class="md:hidden flex gap-sm overflow-x-auto pb-md no-scrollbar">
+<button class="shrink-0 px-md py-xs bg-primary-container text-on-primary-container font-bold border-2 border-on-surface">TODOS</button>
+<button class="shrink-0 px-md py-xs bg-surface border-2 border-outline-variant text-on-surface font-semibold">SOLDAS</button>
+<button class="shrink-0 px-md py-xs bg-surface border-2 border-outline-variant text-on-surface font-semibold">ELÉTRICAS</button>
+<button class="shrink-0 px-md py-xs bg-surface border-2 border-outline-variant text-on-surface font-semibold">FIXAÇÃO</button>
+</div>
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
+<div>
+<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl uppercase">Ferramentas Elétricas</h2>
+<p class="text-secondary font-body-md">Exibindo 24 de 142 produtos premium para profissionais.</p>
+</div>
+<div class="flex items-center gap-sm">
+<span class="font-label-md text-label-md">ORDENAR POR:</span>
+<select class="bg-surface border-2 border-outline-variant px-md py-xs font-label-md focus:border-primary outline-none">
+<option>Mais Populares</option>
+<option>Menor Preço</option>
+<option>Maior Preço</option>
+</select>
+</div>
+</div>
+<!-- Bento-style Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="bg-surface border-2 border-outline-variant p-md flex flex-col group hover:border-primary transition-all">
+<div class="relative aspect-square mb-md bg-surface-container-low p-md flex items-center justify-center">
+<img alt="Furadeira de Impacto" class="w-full h-full object-contain mix-blend-multiply transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjHVe6xwB0C-RZhbotSz1Gkn2ovLsOlFOVQNw15aKg51AFEKNzsmV9HntsX-0-_c-ZCOl-Rmwp14hV8pF-CtbPxPR0b-N7V1vj7hiFQbXWTVosT1YMZL3cNY_Sd0WNX3tgus1UlvKB4MDRDdICj8tWDTAnVkChNglyHVXzTQV3K4eVgX1nt6DfFXTh1eJpY_xTFIrlDDbieWlX08pkyaSnJUfbn8y1cb-F57XnUGLVXELeAepKAWlC8ax9QVZweC8OWlcGNGlzY-Q"/>
+<div class="absolute top-2 left-2 flex flex-col gap-xs">
+<span class="bg-tertiary text-on-tertiary text-[10px] font-bold px-2 py-1 uppercase rounded-sm">Premium</span>
+<span class="bg-error text-on-error text-[10px] font-bold px-2 py-1 uppercase rounded-sm">-15% OFF</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="text-secondary font-label-sm uppercase mb-xs tracking-wider">Makita</p>
+<h4 class="font-headline-sm text-headline-sm mb-sm leading-tight text-on-surface">Furadeira de Impacto 18V LXT Brushless</h4>
+<div class="flex items-center gap-xs mb-md">
+<div class="flex text-primary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star_half</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary">(48)</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-md pt-md border-t-2 border-outline-variant">
+<div>
+<span class="block text-secondary line-through text-label-sm">R$ 1.299,00</span>
+<span class="font-headline-md text-headline-md text-on-surface tracking-tighter">R$ 1.104,15</span>
+</div>
+<button class="bg-primary-container text-on-primary-container p-sm active:scale-95 transition-all hard-shadow border-2 border-on-surface">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="bg-surface border-2 border-outline-variant p-md flex flex-col group hover:border-primary transition-all">
+<div class="relative aspect-square mb-md bg-surface-container-low p-md flex items-center justify-center">
+<img alt="Serra Circular" class="w-full h-full object-contain mix-blend-multiply transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjtea1Dsr63qfwjHr6FAl78BPpNBxgf9nCszWkWlu6Xfukr69wMuObuXh45jiHvS7g_iyhYeWBCRpjRbXMOBYVUZlycjEWAHy7uEDLYwL25G5hkftVp5-CF0kEd0HDoYh3SRiMtHT6W1F_xy3LNDjD5wsKzrHot1U_hE-txdd4RmFpZkLy6-RxSzb-80xpKQ5PKdBDU7EjH9gVPHvxP1F6vwh_Joou34WMbT8S65oHlp573bCWquN50fQTyhZrIxhytCgPXTekvFM"/>
+<div class="absolute top-2 left-2">
+<span class="bg-primary-container text-on-primary-container text-[10px] font-bold px-2 py-1 uppercase rounded-sm">Mais Vendido</span>
+</div>
+</div>
+<div class="flex-1">
+<p class="text-secondary font-label-sm uppercase mb-xs tracking-wider">DeWalt</p>
+<h4 class="font-headline-sm text-headline-sm mb-sm leading-tight text-on-surface">Serra Circular 7-1/4" FlexVolt 60V</h4>
+<div class="flex items-center gap-xs mb-md">
+<div class="flex text-primary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary">(124)</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-md pt-md border-t-2 border-outline-variant">
+<div>
+<span class="font-headline-md text-headline-md text-on-surface tracking-tighter">R$ 2.450,00</span>
+</div>
+<button class="bg-primary-container text-on-primary-container p-sm active:scale-95 transition-all hard-shadow border-2 border-on-surface">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="bg-surface border-2 border-outline-variant p-md flex flex-col group hover:border-primary transition-all">
+<div class="relative aspect-square mb-md bg-surface-container-low p-md flex items-center justify-center">
+<img alt="Máquina de Solda" class="w-full h-full object-contain mix-blend-multiply transition-transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCo8RXY6p3pjYnp5JAxOnfOnlkOPUJoGnzzJQR10KDNXArLpOURyjpxPDYUTajI8ivdw3Xur3cem1sqLklLEQPUV_w_ju6bfdVelwGLnmh0F9lA8IYpAY9U2N5hqpEpVBLXcRbY6lvJwKxiDOORu5lqa8E3bhJu-jiFuny_oqlGpIp_FG3raZONQ1KkB-HJ6RyQ-0uijf9kixGYHR0oT-5lcdIBIeJS3GVJEzitz6u5zv9su0_OSn1dneDBiWM65aInUrk-pVIa4rI"/>
+</div>
+<div class="flex-1">
+<p class="text-secondary font-label-sm uppercase mb-xs tracking-wider">Bosch</p>
+<h4 class="font-headline-sm text-headline-sm mb-sm leading-tight text-on-surface">Inversora de Solda 160A Profissional</h4>
+<div class="flex items-center gap-xs mb-md">
+<div class="flex text-primary-container">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm">star_outline</span>
+</div>
+<span class="text-label-sm font-label-sm text-secondary">(32)</span>
+</div>
+</div>
+<div class="flex items-end justify-between mt-md pt-md border-t-2 border-outline-variant">
+<div>
+<span class="font-headline-md text-headline-md text-on-surface tracking-tighter">R$ 899,00</span>
+</div>
+<button class="bg-primary-container text-on-primary-container p-sm active:scale-95 transition-all hard-shadow border-2 border-on-surface">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<!-- Featured Section (Wide) -->
+<div class="col-span-1 sm:col-span-2 lg:col-span-3 bg-inverse-surface text-surface p-xl flex flex-col md:flex-row items-center gap-lg border-2 border-on-surface">
+<div class="flex-1">
+<span class="bg-primary-container text-on-primary-container px-sm py-xs font-bold text-label-sm uppercase mb-md inline-block">PROMOÇÃO DA SEMANA</span>
+<h3 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl mb-md">KIT COMPLETO DE BROCAS SDS-PLUS</h3>
+<p class="font-body-lg text-body-lg mb-xl opacity-80 max-w-lg">O conjunto definitivo para perfuração em concreto armado, pedra e tijolos. Alta durabilidade e precisão industrial.</p>
+<button class="bg-primary-container text-on-primary-container px-xl py-md font-headline-md text-headline-md hard-shadow transition-transform active:translate-y-1">VER OFERTA</button>
+</div>
+<div class="w-full md:w-1/3 aspect-video bg-surface-container-highest flex items-center justify-center p-md">
+<img alt="Kit Brocas" class="w-full h-full object-cover grayscale" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSVS1q-LVEO0nC8DtU05Qgdtp2SjE18gJL4AIt8LpIReWsBm3dyUh6qagWC3CjPhG8tOalRxKtQHMVH7aF3-mNRSDoWWSY0jncrB2qWAcH3G2eLtWWXHIJes-V8vWPqrwsR8m7AWMqaPjVRp_iAlmn_LiNMepSaz_CCk5y9WapFlnNIxJxrb4t21HN0bD4UiJ94ihTwjNEbbJz6jvAn23IPF_QZlnIycLcOcSn0Yv1sMqJgJngrShEEyC0CfgDCUiYckKz75RmGwY"/>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="flex items-center justify-center gap-base mt-xl">
+<button class="w-10 h-10 border-2 border-outline-variant flex items-center justify-center hover:border-primary transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 border-2 border-on-surface bg-primary-container text-on-primary-container font-bold flex items-center justify-center">1</button>
+<button class="w-10 h-10 border-2 border-outline-variant flex items-center justify-center hover:border-primary transition-colors">2</button>
+<button class="w-10 h-10 border-2 border-outline-variant flex items-center justify-center hover:border-primary transition-colors">3</button>
+<span class="px-base">...</span>
+<button class="w-10 h-10 border-2 border-outline-variant flex items-center justify-center hover:border-primary transition-colors">12</button>
+<button class="w-10 h-10 border-2 border-outline-variant flex items-center justify-center hover:border-primary transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 h-20 bg-surface-container-lowest dark:bg-inverse-surface border-t-2 border-outline-variant dark:border-outline shadow-[0_-4px_0_0_rgba(0,0,0,0.05)] flex justify-around items-center px-margin-mobile">
+<a class="flex flex-col items-center justify-center text-secondary px-4 py-1 active:scale-95 transition-all hover:text-primary" href="index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="font-label-sm text-label-sm">Início</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-label-sm text-label-sm">Catálogo</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary px-4 py-1 active:scale-95 transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-label-sm text-label-sm">Carrinho</span>
+</a>
+<a class="flex flex-col items-center justify-center text-secondary px-4 py-1 active:scale-95 transition-all hover:text-primary" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="font-label-sm text-label-sm">Perfil</span>
+</a>
+</nav>
+<!-- Floating Action Button -->
+<button class="fixed bottom-24 right-margin-mobile md:bottom-md md:right-margin-desktop bg-on-surface text-surface w-14 h-14 rounded-full flex items-center justify-center hard-shadow hover:scale-110 active:scale-95 transition-all z-40">
+<span class="material-symbols-outlined">headset_mic</span>
+</button>
+<footer class="bg-surface-container-high py-xl mt-xl border-t-4 border-primary">
+<div class="max-w-screen-2xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-4 gap-xl">
+<div class="md:col-span-2">
+<div class="flex items-center gap-xs mb-md">
+<h4 class="font-headline-sm text-headline-sm font-bold tracking-tighter text-on-surface">IMPERADOR</h4>
+</div>
+<p class="font-body-md text-secondary max-w-md">Equipando profissionais desde 1992 com as melhores máquinas e ferramentas do mercado mundial. Qualidade, garantia e assistência técnica especializada.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-md uppercase border-b-2 border-outline-variant inline-block">Suporte</h4>
+<ul class="space-y-sm text-body-sm">
+<li><a class="hover:text-primary transition-colors" href="#">Central de Ajuda</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Rastreio de Pedidos</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Garantia e Devolução</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Vendas Corporativas</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md mb-md uppercase border-b-2 border-outline-variant inline-block">Newsletter</h4>
+<p class="text-body-sm text-secondary mb-md">Receba ofertas exclusivas para profissionais.</p>
+<div class="flex gap-xs">
+<input class="bg-surface px-md py-xs border-2 border-outline-variant flex-1 outline-none focus:border-primary" placeholder="E-mail" type="email"/>
+<button class="bg-primary-container text-on-primary-container px-md font-bold border-2 border-on-surface">OK</button>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        document.querySelectorAll('.group').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                const btn = card.querySelector('button');
+                if(btn) btn.classList.add('scale-110');
+            });
+            card.addEventListener('mouseleave', () => {
+                const btn = card.querySelector('button');
+                if(btn) btn.classList.remove('scale-110');
+            });
+        });
+    </script>
+</body></html>
