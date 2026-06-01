@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html class="light" lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Carrinho | IMPERADOR</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+<style>
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .hard-shadow { box-shadow: 4px 4px 0px 0px rgba(11,28,48,1); }
+</style>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode:"class",
+  theme:{ extend:{ colors:{
+    "primary-container":"#ffb800","on-primary-container":"#6b4c00","primary":"#7c5800","on-primary":"#ffffff",
+    "secondary":"#5f5e5e","tertiary":"#055cb9","on-tertiary":"#ffffff",
+    "surface":"#f8f9ff","on-surface":"#0b1c30","surface-container":"#e5eeff",
+    "surface-container-low":"#eff4ff","surface-container-high":"#dce9ff","surface-container-lowest":"#ffffff",
+    "outline":"#837560","outline-variant":"#d5c4ab","inverse-surface":"#213145",
+    "background":"#f8f9ff","on-background":"#0b1c30","error":"#ba1a1a","on-error":"#ffffff",
+    "on-surface-variant":"#514532","surface-dim":"#cbdbf5"
+  }, spacing:{
+    "xs":"4px","sm":"12px","base":"8px","md":"24px","lg":"48px","xl":"80px",
+    "gutter":"24px","margin-mobile":"16px","margin-desktop":"64px"
+  }, fontFamily:{
+    "headline-xl":["Archivo Narrow"],"headline-lg":["Archivo Narrow"],"headline-md":["Archivo Narrow"],
+    "headline-sm":["Archivo Narrow"],"body-lg":["Inter"],"body-md":["Inter"],"body-sm":["Inter"],
+    "label-md":["Inter"],"label-sm":["Inter"]
+  }, fontSize:{
+    "headline-xl":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}],
+    "headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.01em",fontWeight:"700"}],
+    "headline-md":["24px",{lineHeight:"32px",fontWeight:"600"}],
+    "headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],
+    "body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],
+    "body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],
+    "body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}],
+    "label-md":["14px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"600"}],
+    "label-sm":["12px",{lineHeight:"14px",fontWeight:"700"}]
+  }, borderRadius:{ DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem" } } }
+}
+</script>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen pb-24">
+
+<!-- Header -->
+<header class="sticky top-0 z-50 bg-surface border-b-2 border-outline-variant flex items-center justify-between px-margin-mobile md:px-margin-desktop h-16 w-full">
+  <button onclick="history.back()" class="flex items-center justify-center w-10 h-10 hover:bg-surface-container active:translate-y-0.5 transition-transform">
+    <span class="material-symbols-outlined text-primary">arrow_back</span>
+  </button>
+  <h1 class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">IMPERADOR</h1>
+  <div class="w-10"></div>
+</header>
+
+<main class="max-w-5xl mx-auto px-margin-mobile md:px-margin-desktop py-lg">
+
+  <div class="flex items-end justify-between mb-lg">
+    <div>
+      <h2 class="font-headline-lg text-headline-lg uppercase text-on-surface">Meu Carrinho</h2>
+      <div class="h-1 w-16 bg-primary-container mt-xs"></div>
+    </div>
+    <span id="item-count" class="font-label-md text-label-md text-secondary uppercase">3 itens</span>
+  </div>
+
+  <div class="flex flex-col lg:flex-row gap-lg">
+
+    <!-- Lista de itens -->
+    <div class="flex-1 flex flex-col gap-md" id="cart-list">
+
+      <!-- Item 1 -->
+      <div class="cart-item bg-surface border-2 border-outline-variant p-md flex gap-md" data-id="1" data-price="1104.15">
+        <a href="produto.html?id=1" class="w-24 h-24 md:w-32 md:h-32 bg-surface-container-low border border-outline-variant flex-shrink-0 p-xs">
+          <img class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjHVe6xwB0C-RZhbotSz1Gkn2ovLsOlFOVQNw15aKg51AFEKNzsmV9HntsX-0-_c-ZCOl-Rmwp14hV8pF-CtbPxPR0b-N7V1vj7hiFQbXWTVosT1YMZL3cNY_Sd0WNX3tgus1UlvKB4MDRDdICj8tWDTAnVkChNglyHVXzTQV3K4eVgX1nt6DfFXTh1eJpY_xTFIrlDDbieWlX08pkyaSnJUfbn8y1cb-F57XnUGLVXELeAepKAWlC8ax9QVZweC8OWlcGNGlzY-Q" alt="Furadeira Makita">
+        </a>
+        <div class="flex flex-col flex-1 justify-between">
+          <div>
+            <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-xs">Makita</p>
+            <a href="produto.html?id=1" class="font-headline-sm text-headline-sm text-on-surface leading-tight hover:text-primary transition-colors">Furadeira de Impacto 18V LXT Brushless</a>
+            <p class="font-body-sm text-secondary mt-xs">Motor Brushless • 13mm • 50 Nm</p>
+          </div>
+          <div class="flex items-center justify-between mt-sm">
+            <div class="flex items-center border-2 border-outline-variant">
+              <button onclick="changeQty(this, -1)" class="w-9 h-9 flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-lg">−</button>
+              <span class="qty w-9 h-9 flex items-center justify-center font-label-md border-x-2 border-outline-variant">1</span>
+              <button onclick="changeQty(this, 1)" class="w-9 h-9 flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-lg">+</button>
+            </div>
+            <div class="text-right">
+              <span class="font-headline-sm text-headline-sm text-on-surface item-total">R$ 1.104,15</span>
+            </div>
+          </div>
+        </div>
+        <button onclick="removeItem(this)" class="self-start p-xs hover:text-error transition-colors text-secondary">
+          <span class="material-symbols-outlined">delete_outline</span>
+        </button>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="cart-item bg-surface border-2 border-outline-variant p-md flex gap-md" data-id="2" data-price="2450.00">
+        <a href="produto.html?id=2" class="w-24 h-24 md:w-32 md:h-32 bg-surface-container-low border border-outline-variant flex-shrink-0 p-xs">
+          <img class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjtea1Dsr63qfwjHr6FAl78BPpNBxgf9nCszWkWlu6Xfukr69wMuObuXh45jiHvS7g_iyhYeWBCRpjRbXMOBYVUZlycjEWAHy7uEDLYwL25G5hkftVp5-CF0kEd0HDoYh3SRiMtHT6W1F_xy3LNDjD5wsKzrHot1U_hE-txdd4RmFpZkLy6-RxSzb-80xpKQ5PKdBDU7EjH9gVPHvxP1F6vwh_Joou34WMbT8S65oHlp573bCWquN50fQTyhZrIxhytCgPXTekvFM" alt="Serra Circular DeWalt">
+        </a>
+        <div class="flex flex-col flex-1 justify-between">
+          <div>
+            <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-xs">DeWalt</p>
+            <a href="produto.html?id=2" class="font-headline-sm text-headline-sm text-on-surface leading-tight hover:text-primary transition-colors">Serra Circular 7-1/4" FlexVolt 60V</a>
+            <p class="font-body-sm text-secondary mt-xs">60V • Disco 7-1/4" • 5.800 rpm</p>
+          </div>
+          <div class="flex items-center justify-between mt-sm">
+            <div class="flex items-center border-2 border-outline-variant">
+              <button onclick="changeQty(this, -1)" class="w-9 h-9 flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-lg">−</button>
+              <span class="qty w-9 h-9 flex items-center justify-center font-label-md border-x-2 border-outline-variant">1</span>
+              <button onclick="changeQty(this, 1)" class="w-9 h-9 flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-lg">+</button>
+            </div>
+            <div class="text-right">
+              <span class="font-headline-sm text-headline-sm text-on-surface item-total">R$ 2.450,00</span>
+            </div>
+          </div>
+        </div>
+        <button onclick="removeItem(this)" class="self-start p-xs hover:text-error transition-colors text-secondary">
+          <span class="material-symbols-outlined">delete_outline</span>
+        </button>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="cart-item bg-surface border-2 border-outline-variant p-md flex gap-md" data-id="5" data-price="412.00">
+        <a href="produto.html?id=5" class="w-24 h-24 md:w-32 md:h-32 bg-surface-container-low border border-outline-variant flex-shrink-0 p-xs">
+          <img class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVHoC06yjsxtv1t7gMpDLX2XCcNrhmzojVH7kmyVcThSThnTkT4iNBXr-9_9VkGxjvOAc218TaUiSTB2Q6shQtlgtq5HCj7RtxYQXnsI8d2cMgR-L247FBh-S86RpcvR5HGQ7TSMNrPJsNl08lSEIQLQZckcELabHBN34akBmfVlp7dO-ERfsCX1lyPrnPJNgl7pvMILtmJyZgdAc78lUk2MPTMpIBdHY28K1zsau90dO8P4qb0TttbybdK6cv-jaCe2S87f9m8CM" alt="Esmerilhadeira Bosch">
+        </a>
+        <div class="flex flex-col flex-1 justify-between">
+          <div>
+            <p class="font-label-sm text-label-sm text-secondary uppercase tracking-wider mb-xs">Bosch</p>
+            <a href="produto.html?id=5" class="font-headline-sm text-headline-sm text-on-surface leading-tight hover:text-primary transition-colors">Esmerilhadeira Angular 4-1/2" 710W</a>
+            <p class="font-body-sm text-secondary mt-xs">710W • 115mm • 11.000 rpm</p>
+          </div>
+          <div class="flex items-center justify-between mt-sm">
+            <div class="flex items-center border-2 border-outline-variant">
+              <button onclick="changeQty(this, -1)" class="w-9 h-9 flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-lg">−</button>
+              <span class="qty w-9 h-9 flex items-center justify-center font-label-md border-x-2 border-outline-variant">1</span>
+              <button onclick="changeQty(this, 1)" class="w-9 h-9 flex items-center justify-center hover:bg-surface-container transition-colors font-bold text-lg">+</button>
+            </div>
+            <div class="text-right">
+              <span class="font-headline-sm text-headline-sm text-on-surface item-total">R$ 412,00</span>
+            </div>
+          </div>
+        </div>
+        <button onclick="removeItem(this)" class="self-start p-xs hover:text-error transition-colors text-secondary">
+          <span class="material-symbols-outlined">delete_outline</span>
+        </button>
+      </div>
+
+      <!-- Empty state (oculto por padrão) -->
+      <div id="empty-state" class="hidden flex flex-col items-center justify-center py-xl text-center border-2 border-dashed border-outline-variant">
+        <span class="material-symbols-outlined text-5xl text-outline mb-md">shopping_cart</span>
+        <p class="font-headline-sm text-headline-sm text-on-surface-variant mb-sm">Seu carrinho está vazio</p>
+        <a href="catalogo.html" class="font-label-md text-label-md text-primary underline">Ver catálogo</a>
+      </div>
+
+    </div>
+
+    <!-- Resumo do pedido -->
+    <div class="lg:w-80 shrink-0">
+      <div class="bg-surface border-2 border-outline-variant p-md sticky top-24">
+        <h3 class="font-headline-sm text-headline-sm uppercase mb-md border-b-2 border-outline-variant pb-sm">Resumo do Pedido</h3>
+
+        <div class="space-y-sm mb-md">
+          <div class="flex justify-between font-body-md">
+            <span class="text-secondary">Subtotal (<span id="summary-count">3</span> itens)</span>
+            <span id="subtotal" class="text-on-surface font-bold">R$ 3.966,15</span>
+          </div>
+          <div class="flex justify-between font-body-md">
+            <span class="text-secondary">Frete</span>
+            <span class="text-green-600 font-bold">Grátis</span>
+          </div>
+          <div class="flex justify-between font-body-md">
+            <span class="text-secondary">Desconto</span>
+            <span class="text-error font-bold">− R$ 0,00</span>
+          </div>
+        </div>
+
+        <div class="border-t-2 border-outline-variant pt-md mb-md flex justify-between items-baseline">
+          <span class="font-headline-sm text-headline-sm text-on-surface">Total</span>
+          <span id="total" class="font-headline-md text-headline-md text-on-surface">R$ 3.966,15</span>
+        </div>
+
+        <p class="font-body-sm text-secondary mb-md text-center">em até 10x de <strong id="installment">R$ 396,62</strong> sem juros</p>
+
+        <button class="w-full bg-primary-container text-on-primary-container font-headline-sm text-headline-sm h-14 flex items-center justify-center gap-2 hard-shadow hover:translate-x-[-2px] hover:translate-y-[-2px] active:translate-x-[2px] active:translate-y-[2px] active:shadow-none transition-all uppercase">
+          <span class="material-symbols-outlined">lock</span>
+          FINALIZAR COMPRA
+        </button>
+
+        <div class="mt-md flex items-center justify-center gap-sm text-secondary">
+          <span class="material-symbols-outlined text-sm">verified_user</span>
+          <span class="font-body-sm">Compra 100% segura</span>
+        </div>
+
+        <!-- Cupom -->
+        <div class="mt-md border-t border-outline-variant pt-md">
+          <p class="font-label-md text-label-md uppercase mb-sm">Cupom de desconto</p>
+          <div class="flex gap-xs">
+            <input type="text" placeholder="IMPERADOR10" class="flex-1 border-2 border-outline-variant px-sm py-xs font-body-sm outline-none focus:border-primary bg-surface-container-low"/>
+            <button class="bg-on-surface text-surface px-md font-bold font-label-md uppercase hover:opacity-80 transition-opacity">OK</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<!-- Bottom Nav -->
+<nav class="md:hidden fixed bottom-0 w-full z-50 h-20 bg-surface-container-lowest border-t-2 border-outline-variant shadow-[0_-4px_0_0_rgba(0,0,0,0.05)] flex justify-around items-center px-margin-mobile">
+  <a href="index.html" class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:text-primary active:scale-95 transition-all">
+    <span class="material-symbols-outlined">home</span>
+    <span class="font-label-sm text-label-sm">Início</span>
+  </a>
+  <a href="catalogo.html" class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:text-primary active:scale-95 transition-all">
+    <span class="material-symbols-outlined">grid_view</span>
+    <span class="font-label-sm text-label-sm">Catálogo</span>
+  </a>
+  <a href="carrinho.html" class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 transition-all">
+    <span class="material-symbols-outlined">shopping_cart</span>
+    <span class="font-label-sm text-label-sm">Carrinho</span>
+  </a>
+  <a href="#" class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:text-primary active:scale-95 transition-all">
+    <span class="material-symbols-outlined">person</span>
+    <span class="font-label-sm text-label-sm">Perfil</span>
+  </a>
+</nav>
+
+<script>
+  function fmt(n) {
+    return 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+
+  function getItemPrice(item) {
+    return parseFloat(item.dataset.price);
+  }
+
+  function getItemQty(item) {
+    return parseInt(item.querySelector('.qty').textContent);
+  }
+
+  function updateTotals() {
+    const items = document.querySelectorAll('.cart-item');
+    let total = 0;
+    let count = 0;
+
+    items.forEach(item => {
+      if (item.style.display === 'none') return;
+      const price = getItemPrice(item);
+      const qty   = getItemQty(item);
+      const line  = price * qty;
+      item.querySelector('.item-total').textContent = fmt(line);
+      total += line;
+      count += qty;
+    });
+
+    document.getElementById('subtotal').textContent     = fmt(total);
+    document.getElementById('total').textContent        = fmt(total);
+    document.getElementById('installment').textContent  = fmt(total / 10);
+    document.getElementById('summary-count').textContent = count;
+    document.getElementById('item-count').textContent   =
+      count + (count === 1 ? ' item' : ' itens');
+  }
+
+  function changeQty(btn, delta) {
+    const item    = btn.closest('.cart-item');
+    const qtyEl   = item.querySelector('.qty');
+    let qty = parseInt(qtyEl.textContent) + delta;
+    if (qty < 1) qty = 1;
+    qtyEl.textContent = qty;
+    updateTotals();
+  }
+
+  function removeItem(btn) {
+    const item = btn.closest('.cart-item');
+    item.style.display = 'none';
+    const remaining = document.querySelectorAll('.cart-item:not([style*="none"])').length;
+    if (remaining === 0) document.getElementById('empty-state').classList.remove('hidden');
+    updateTotals();
+  }
+</script>
+</body>
+</html>
