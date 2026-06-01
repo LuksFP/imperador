@@ -716,7 +716,8 @@
 </div>
 </footer>
 <script>
-        document.querySelectorAll('.group').forEach(card => {
+        document.querySelectorAll('.group').forEach((card, index) => {
+            const productId = index + 1;
             card.addEventListener('mouseenter', () => {
                 const btn = card.querySelector('button');
                 if(btn) btn.classList.add('scale-110');
@@ -724,6 +725,12 @@
             card.addEventListener('mouseleave', () => {
                 const btn = card.querySelector('button');
                 if(btn) btn.classList.remove('scale-110');
+            });
+            card.style.cursor = 'pointer';
+            card.addEventListener('click', function(e) {
+                if (!e.target.closest('button')) {
+                    window.location.href = `produto.html?id=${productId}`;
+                }
             });
         });
     </script>
