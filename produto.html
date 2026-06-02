@@ -6,6 +6,7 @@
 <title>Produto | IMPERADOR</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<script src="cart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
 <style>
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
@@ -52,9 +53,10 @@ tailwind.config = {
     <span class="material-symbols-outlined text-primary">arrow_back</span>
   </button>
   <h1 class="font-headline-md text-headline-md font-bold tracking-tighter text-primary">IMPERADOR</h1>
-  <button class="flex items-center justify-center w-10 h-10 hover:bg-surface-container-high active:translate-y-0.5 transition-transform">
+  <a href="carrinho.html" class="flex items-center justify-center w-10 h-10 hover:bg-surface-container-high active:translate-y-0.5 transition-transform relative">
     <span class="material-symbols-outlined text-primary">shopping_cart</span>
-  </button>
+    <span class="cart-badge hidden absolute -top-1 -right-1 bg-error text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center"></span>
+  </a>
 </header>
 
 <main class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-lg grid grid-cols-1 md:grid-cols-12 gap-gutter">
@@ -269,6 +271,20 @@ document.getElementById('thumbs').addEventListener('click', e => {
 const btn = document.getElementById('btn-cart');
 btn.addEventListener('mousedown', () => btn.classList.remove('hard-shadow'));
 btn.addEventListener('mouseup', () => btn.classList.add('hard-shadow'));
+
+btn.addEventListener('click', () => {
+  const id = parseInt(getParam('id')) || 1;
+  Cart.add(id);
+  const orig = btn.innerHTML;
+  btn.innerHTML = '<span class="material-symbols-outlined">check_circle</span> ADICIONADO!';
+  btn.style.background = '#16a34a';
+  btn.style.color = '#fff';
+  setTimeout(() => {
+    btn.innerHTML = orig;
+    btn.style.background = '';
+    btn.style.color = '';
+  }, 1500);
+});
 </script>
 </body>
 </html>
