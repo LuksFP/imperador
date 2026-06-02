@@ -5,6 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Catálogo | IMPERADOR Hardware Store</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="cart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
@@ -140,10 +141,10 @@
 </div>
 <div class="flex items-center gap-md">
 <span class="material-symbols-outlined cursor-pointer md:hidden active:translate-y-0.5 transition-transform">search</span>
-<div class="relative cursor-pointer group">
+<a href="carrinho.html" class="relative cursor-pointer group">
 <span class="material-symbols-outlined active:translate-y-0.5 transition-transform">shopping_cart</span>
-<span class="absolute -top-2 -right-2 bg-primary-container text-on-primary-container text-[10px] font-bold px-1.5 rounded-full border border-on-surface">3</span>
-</div>
+<span class="cart-badge hidden absolute -top-2 -right-2 bg-error text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center"></span>
+</a>
 <span class="hidden md:block material-symbols-outlined cursor-pointer active:translate-y-0.5 transition-transform">person</span>
 </div>
 </div>
@@ -154,24 +155,28 @@
 <!-- Category Navigation -->
 <section class="bg-surface border-2 border-outline-variant p-md">
 <h3 class="font-headline-sm text-headline-sm mb-md text-on-surface">CATEGORIAS</h3>
-<nav class="flex flex-col">
-<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="#">
+<nav class="flex flex-col" id="cat-nav">
+<a class="cat-link flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="javascript:void(0)" data-cat="todas">
+<span class="material-symbols-outlined">apps</span>
+<span class="font-label-md text-label-md uppercase">Todas</span>
+</a>
+<a class="cat-link flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="javascript:void(0)" data-cat="soldas">
 <span class="material-symbols-outlined">whatshot</span>
 <span class="font-label-md text-label-md uppercase">Soldas</span>
 </a>
-<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 bg-primary-container text-on-primary-container font-bold border-l-4 border-primary" href="#">
+<a class="cat-link flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="javascript:void(0)" data-cat="eletricas">
 <span class="material-symbols-outlined">handyman</span>
 <span class="font-label-md text-label-md uppercase">Ferramentas Elétricas</span>
 </a>
-<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="#">
+<a class="cat-link flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="javascript:void(0)" data-cat="fixacao">
 <span class="material-symbols-outlined">hardware</span>
 <span class="font-label-md text-label-md uppercase">Fixação</span>
 </a>
-<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="#">
+<a class="cat-link flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="javascript:void(0)" data-cat="maquinas">
 <span class="material-symbols-outlined">precision_manufacturing</span>
 <span class="font-label-md text-label-md uppercase">Máquinas</span>
 </a>
-<a class="flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="#">
+<a class="cat-link flex items-center gap-sm py-sm px-base transition-colors duration-200 text-on-surface-variant hover:bg-surface-container-high" href="javascript:void(0)" data-cat="ofertas">
 <span class="material-symbols-outlined">sell</span>
 <span class="font-label-md text-label-md uppercase">Ofertas Especiais</span>
 </a>
@@ -202,39 +207,58 @@
 <!-- Price Filter -->
 <section class="bg-surface border-2 border-outline-variant p-md">
 <h3 class="font-headline-sm text-headline-sm mb-md text-on-surface border-b-2 border-outline-variant pb-xs">PREÇO</h3>
-<input class="w-full h-2 bg-surface-container-highest rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
-<div class="flex justify-between mt-sm text-label-sm font-label-sm text-secondary">
-<span>R$ 0</span>
-<span>R$ 5000+</span>
+<div class="space-y-sm" id="price-ranges">
+  <label class="flex items-center gap-sm cursor-pointer group price-range-item">
+    <input class="w-5 h-5 border-2 border-outline bg-surface-container-low text-primary focus:ring-0" type="radio" name="price" value="all" checked/>
+    <span class="font-body-md group-hover:text-primary transition-colors">Todos os preços</span>
+  </label>
+  <label class="flex items-center gap-sm cursor-pointer group price-range-item">
+    <input class="w-5 h-5 border-2 border-outline bg-surface-container-low text-primary focus:ring-0" type="radio" name="price" value="0-500"/>
+    <span class="font-body-md group-hover:text-primary transition-colors">Até R$ 500</span>
+  </label>
+  <label class="flex items-center gap-sm cursor-pointer group price-range-item">
+    <input class="w-5 h-5 border-2 border-outline bg-surface-container-low text-primary focus:ring-0" type="radio" name="price" value="500-1000"/>
+    <span class="font-body-md group-hover:text-primary transition-colors">R$ 500 – R$ 1.000</span>
+  </label>
+  <label class="flex items-center gap-sm cursor-pointer group price-range-item">
+    <input class="w-5 h-5 border-2 border-outline bg-surface-container-low text-primary focus:ring-0" type="radio" name="price" value="1000-2000"/>
+    <span class="font-body-md group-hover:text-primary transition-colors">R$ 1.000 – R$ 2.000</span>
+  </label>
+  <label class="flex items-center gap-sm cursor-pointer group price-range-item">
+    <input class="w-5 h-5 border-2 border-outline bg-surface-container-low text-primary focus:ring-0" type="radio" name="price" value="2000-99999"/>
+    <span class="font-body-md group-hover:text-primary transition-colors">Acima de R$ 2.000</span>
+  </label>
 </div>
 </section>
 </aside>
 <!-- Main Product Canvas -->
 <div class="flex-1">
 <!-- Mobile Filters Horizontal (Scrollable) -->
-<div class="md:hidden flex gap-sm overflow-x-auto pb-md no-scrollbar">
-<button class="shrink-0 px-md py-xs bg-primary-container text-on-primary-container font-bold border-2 border-on-surface">TODOS</button>
-<button class="shrink-0 px-md py-xs bg-surface border-2 border-outline-variant text-on-surface font-semibold">SOLDAS</button>
-<button class="shrink-0 px-md py-xs bg-surface border-2 border-outline-variant text-on-surface font-semibold">ELÉTRICAS</button>
-<button class="shrink-0 px-md py-xs bg-surface border-2 border-outline-variant text-on-surface font-semibold">FIXAÇÃO</button>
+<div class="md:hidden flex gap-sm overflow-x-auto pb-md no-scrollbar" id="mob-cats">
+<button class="mob-cat shrink-0 px-md py-xs font-bold border-2" data-cat="todas">TODOS</button>
+<button class="mob-cat shrink-0 px-md py-xs font-semibold border-2" data-cat="soldas">SOLDAS</button>
+<button class="mob-cat shrink-0 px-md py-xs font-semibold border-2" data-cat="eletricas">ELÉTRICAS</button>
+<button class="mob-cat shrink-0 px-md py-xs font-semibold border-2" data-cat="fixacao">FIXAÇÃO</button>
+<button class="mob-cat shrink-0 px-md py-xs font-semibold border-2" data-cat="maquinas">MÁQUINAS</button>
+<button class="mob-cat shrink-0 px-md py-xs font-semibold border-2" data-cat="ofertas">OFERTAS</button>
 </div>
 <!-- Page Header -->
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-md mb-lg">
 <div>
-<h2 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl uppercase">Ferramentas Elétricas</h2>
-<p class="text-secondary font-body-md">Exibindo 24 de 142 produtos premium para profissionais.</p>
+<h2 id="cat-heading" class="font-headline-xl text-headline-lg-mobile md:text-headline-xl uppercase">Todos os Produtos</h2>
+<p id="product-count" class="text-secondary font-body-md">Exibindo 24 de 24 produtos premium para profissionais.</p>
 </div>
 <div class="flex items-center gap-sm">
 <span class="font-label-md text-label-md">ORDENAR POR:</span>
-<select class="bg-surface border-2 border-outline-variant px-md py-xs font-label-md focus:border-primary outline-none">
-<option>Mais Populares</option>
-<option>Menor Preço</option>
-<option>Maior Preço</option>
+<select id="sort-select" class="bg-surface border-2 border-outline-variant px-md py-xs font-label-md focus:border-primary outline-none">
+<option value="popular">Mais Populares</option>
+<option value="asc">Menor Preço</option>
+<option value="desc">Maior Preço</option>
 </select>
 </div>
 </div>
 <!-- Bento-style Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<div id="products-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
 
 <!-- 1 -->
 <div class="bg-surface border-2 border-outline-variant p-md flex flex-col group hover:border-primary transition-all">
@@ -716,22 +740,120 @@
 </div>
 </footer>
 <script>
-        document.querySelectorAll('.group').forEach((card, index) => {
-            const productId = index + 1;
-            card.addEventListener('mouseenter', () => {
-                const btn = card.querySelector('button');
-                if(btn) btn.classList.add('scale-110');
-            });
-            card.addEventListener('mouseleave', () => {
-                const btn = card.querySelector('button');
-                if(btn) btn.classList.remove('scale-110');
-            });
-            card.style.cursor = 'pointer';
-            card.addEventListener('click', function(e) {
-                if (!e.target.closest('button')) {
-                    window.location.href = `produto.html?id=${productId}`;
-                }
-            });
-        });
-    </script>
+  const CAT_MAP = {
+    1:'eletricas',2:'eletricas',3:'soldas',4:'eletricas',5:'eletricas',
+    6:'eletricas',7:'eletricas',8:'eletricas',9:'eletricas',10:'eletricas',
+    11:'eletricas',12:'maquinas',13:'eletricas',14:'eletricas',15:'eletricas',
+    16:'fixacao',17:'fixacao',18:'eletricas',19:'maquinas',20:'eletricas',
+    21:'maquinas',22:'eletricas',23:'maquinas',24:'eletricas'
+  };
+  const OFERTAS   = [1,5,14,21];
+  const CAT_NAMES = {todas:'Todos os Produtos',soldas:'Soldas',eletricas:'Ferramentas Elétricas',fixacao:'Fixação',maquinas:'Máquinas',ofertas:'Ofertas Especiais'};
+
+  const grid     = document.getElementById('products-grid');
+  const banner   = grid.querySelector('.col-span-1');
+  const allCards = Array.from(grid.querySelectorAll('.group'));
+  const origOrder = [...allCards];
+
+  // ── tag cada card ────────────────────────────────────────────────────
+  allCards.forEach((card, i) => {
+    const id = i + 1;
+    card.dataset.id = id;
+    card.dataset.category = CAT_MAP[id] || 'eletricas';
+    const priceEl = card.querySelector('.tracking-tighter');
+    if (priceEl) {
+      card.dataset.price = parseFloat(priceEl.textContent.replace('R$','').replace(/\./g,'').replace(',','.')) || 0;
+    }
+    const brandEl = card.querySelector('.tracking-wider');
+    if (brandEl) card.dataset.brand = brandEl.textContent.trim().toLowerCase();
+
+    card.style.cursor = 'pointer';
+    card.addEventListener('mouseenter', () => card.querySelector('button')?.classList.add('scale-110'));
+    card.addEventListener('mouseleave', () => card.querySelector('button')?.classList.remove('scale-110'));
+    card.addEventListener('click', e => {
+      if (e.target.closest('button')) {
+        Cart.add(id);
+        const btn  = e.target.closest('button');
+        const icon = btn.querySelector('.material-symbols-outlined');
+        icon.textContent = 'check';
+        btn.classList.replace('bg-primary-container','bg-green-500');
+        setTimeout(() => { icon.textContent = 'add_shopping_cart'; btn.classList.replace('bg-green-500','bg-primary-container'); }, 1200);
+      } else {
+        location.href = `produto.html?id=${id}`;
+      }
+    });
+  });
+
+  // ── filtro + ordenação (chamados juntos) ─────────────────────────────
+  function render() {
+    const cat    = localStorage.getItem('imperador_cat') || 'todas';
+    const sort   = localStorage.getItem('imperador_sort') || 'popular';
+    const price  = (document.querySelector('input[name="price"]:checked')?.value) || 'all';
+    const brands = [...document.querySelectorAll('input[type="checkbox"]:checked')]
+                   .map(c => c.nextElementSibling.textContent.trim().toLowerCase());
+    const [pMin,pMax] = price === 'all' ? [0,Infinity] : price.split('-').map(Number);
+
+    // 1. filtrar
+    let visible = [];
+    allCards.forEach(card => {
+      const id     = +card.dataset.id;
+      const catOk  = cat==='todas' || (cat==='ofertas'&&OFERTAS.includes(id)) || card.dataset.category===cat;
+      const prOk   = (+card.dataset.price)>=pMin && (+card.dataset.price)<=pMax;
+      const brOk   = !brands.length || brands.some(b => card.dataset.brand?.includes(b));
+      const show   = catOk && prOk && brOk;
+      card.style.display = show ? '' : 'none';
+      if (show) visible.push(card);
+    });
+
+    // 2. ordenar visíveis no DOM
+    let sorted = [...visible];
+    if (sort==='asc')  sorted.sort((a,b)=>+a.dataset.price - +b.dataset.price);
+    if (sort==='desc') sorted.sort((a,b)=>+b.dataset.price - +a.dataset.price);
+    if (sort==='popular') sorted.sort((a,b)=>origOrder.indexOf(a)-origOrder.indexOf(b));
+
+    sorted.forEach(c => grid.appendChild(c));
+    if (banner) grid.appendChild(banner);
+
+    // 3. contador
+    const total = cat==='todas'?24 : cat==='ofertas'?OFERTAS.length : allCards.filter(c=>c.dataset.category===cat).length;
+    document.getElementById('product-count').textContent = `Exibindo ${visible.length} de ${total} produtos`;
+  }
+
+  // ── categoria ─────────────────────────────────────────────────────────
+  function selectCategory(cat) {
+    localStorage.setItem('imperador_cat', cat);
+    document.querySelectorAll('.cat-link').forEach(a => {
+      const on = a.dataset.cat === cat;
+      a.className = `cat-link flex items-center gap-sm py-sm px-base transition-colors duration-200 ${on
+        ? 'bg-primary-container text-on-primary-container font-bold border-l-4 border-primary'
+        : 'text-on-surface-variant hover:bg-surface-container-high'}`;
+    });
+    document.querySelectorAll('.mob-cat').forEach(b => {
+      const on = b.dataset.cat === cat;
+      b.className = `mob-cat shrink-0 px-md py-xs font-bold border-2 ${on
+        ? 'bg-primary-container text-on-primary-container border-on-surface'
+        : 'bg-surface border-outline-variant text-on-surface'}`;
+    });
+    document.getElementById('cat-heading').textContent = CAT_NAMES[cat] || 'Todos os Produtos';
+    render();
+  }
+
+  document.querySelectorAll('.cat-link').forEach(a => a.addEventListener('click', () => selectCategory(a.dataset.cat)));
+  document.querySelectorAll('.mob-cat').forEach(b  => b.addEventListener('click',  () => selectCategory(b.dataset.cat)));
+
+  // ── ordenação ─────────────────────────────────────────────────────────
+  const sortSelect = document.getElementById('sort-select');
+  sortSelect.addEventListener('change', () => { localStorage.setItem('imperador_sort', sortSelect.value); render(); });
+
+  // ── filtros ───────────────────────────────────────────────────────────
+  document.querySelectorAll('input[name="price"]').forEach(r => r.addEventListener('change', render));
+  document.querySelectorAll('input[type="checkbox"]').forEach(c => c.addEventListener('change', render));
+
+  // ── init ──────────────────────────────────────────────────────────────
+  const urlCat  = new URLSearchParams(location.search).get('cat');
+  const initCat  = urlCat || localStorage.getItem('imperador_cat') || 'todas';
+  const initSort = localStorage.getItem('imperador_sort') || 'popular';
+  sortSelect.value = initSort;
+  selectCategory(initCat);
+</script>
 </body></html>
