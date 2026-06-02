@@ -5,114 +5,51 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Imperador - Meu Carrinho</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&amp;family=Inter:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="cart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-tertiary-container": "#004fa1",
-                      "on-error-container": "#93000a",
-                      "surface-tint": "#7c5800",
-                      "tertiary-fixed-dim": "#aac7ff",
-                      "error": "#ba1a1a",
-                      "surface-container-low": "#eff4ff",
-                      "surface-container-highest": "#d3e4fe",
-                      "secondary": "#5f5e5e",
-                      "inverse-primary": "#ffba20",
-                      "primary-container": "#ffb800",
-                      "secondary-container": "#e2dfde",
-                      "on-secondary-fixed-variant": "#474746",
-                      "tertiary-fixed": "#d7e3ff",
-                      "surface-dim": "#cbdbf5",
-                      "on-surface": "#0b1c30",
-                      "inverse-surface": "#213145",
-                      "primary-fixed": "#ffdea8",
-                      "primary": "#7c5800",
-                      "outline-variant": "#d5c4ab",
-                      "secondary-fixed-dim": "#c8c6c5",
-                      "on-surface-variant": "#514532",
-                      "primary-fixed-dim": "#ffba20",
-                      "background": "#f8f9ff",
-                      "on-primary-fixed-variant": "#5e4200",
-                      "on-secondary-container": "#636262",
-                      "outline": "#837560",
-                      "tertiary": "#055cb9",
-                      "surface": "#f8f9ff",
-                      "on-primary-container": "#6b4c00",
-                      "on-error": "#ffffff",
-                      "on-primary-fixed": "#271900",
-                      "on-secondary-fixed": "#1c1b1b",
-                      "on-background": "#0b1c30",
-                      "surface-variant": "#d3e4fe",
-                      "on-tertiary": "#ffffff",
-                      "on-primary": "#ffffff",
-                      "tertiary-container": "#a7c5ff",
-                      "surface-bright": "#f8f9ff",
-                      "on-secondary": "#ffffff",
-                      "surface-container-high": "#dce9ff",
-                      "on-tertiary-fixed": "#001b3e",
-                      "inverse-on-surface": "#eaf1ff",
-                      "on-tertiary-fixed-variant": "#00458e",
-                      "secondary-fixed": "#e5e2e1",
-                      "surface-container": "#e5eeff",
-                      "error-container": "#ffdad6",
-                      "surface-container-lowest": "#ffffff"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.125rem",
-                      "lg": "0.25rem",
-                      "xl": "0.5rem",
-                      "full": "0.75rem"
-              },
-              "spacing": {
-                      "gutter": "24px",
-                      "lg": "48px",
-                      "md": "24px",
-                      "xl": "80px",
-                      "margin-mobile": "16px",
-                      "base": "8px",
-                      "xs": "4px",
-                      "margin-desktop": "64px",
-                      "sm": "12px"
-              },
-              "fontFamily": {
-                      "headline-xl": ["Archivo Narrow"],
-                      "headline-sm": ["Archivo Narrow"],
-                      "body-md": ["Inter"],
-                      "label-sm": ["Inter"],
-                      "body-sm": ["Inter"],
-                      "headline-lg": ["Archivo Narrow"],
-                      "headline-md": ["Archivo Narrow"],
-                      "headline-lg-mobile": ["Archivo Narrow"],
-                      "label-md": ["Inter"],
-                      "body-lg": ["Inter"]
-              },
-              "fontSize": {
-                      "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                      "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                      "label-sm": ["12px", {"lineHeight": "14px", "fontWeight": "700"}],
-                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
-                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                      "headline-lg-mobile": ["28px", {"lineHeight": "36px", "fontWeight": "700"}],
-                      "label-md": ["14px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
-              }
-            },
-          },
-        }
-    </script>
+tailwind.config = {
+  darkMode:"class",
+  theme:{ extend:{ colors:{
+    "on-tertiary-container":"#004fa1","on-error-container":"#93000a","surface-tint":"#7c5800",
+    "error":"#ba1a1a","surface-container-low":"#eff4ff","surface-container-highest":"#d3e4fe",
+    "secondary":"#5f5e5e","inverse-primary":"#ffba20","primary-container":"#ffb800",
+    "secondary-container":"#e2dfde","surface-dim":"#cbdbf5","on-surface":"#0b1c30",
+    "inverse-surface":"#213145","primary":"#7c5800","outline-variant":"#d5c4ab",
+    "on-surface-variant":"#514532","primary-fixed-dim":"#ffba20","background":"#f8f9ff",
+    "on-secondary-container":"#636262","outline":"#837560","tertiary":"#055cb9",
+    "surface":"#f8f9ff","on-primary-container":"#6b4c00","on-error":"#ffffff",
+    "on-primary-fixed":"#271900","on-background":"#0b1c30","surface-variant":"#d3e4fe",
+    "on-tertiary":"#ffffff","on-primary":"#ffffff","tertiary-container":"#a7c5ff",
+    "on-secondary":"#ffffff","surface-container-high":"#dce9ff","inverse-on-surface":"#eaf1ff",
+    "surface-container":"#e5eeff","error-container":"#ffdad6","surface-container-lowest":"#ffffff"
+  }, borderRadius:{ DEFAULT:"0.125rem",lg:"0.25rem",xl:"0.5rem",full:"0.75rem" },
+  spacing:{
+    "gutter":"24px","lg":"48px","md":"24px","xl":"80px","margin-mobile":"16px",
+    "base":"8px","xs":"4px","margin-desktop":"64px","sm":"12px"
+  }, fontFamily:{
+    "headline-xl":["Archivo Narrow"],"headline-sm":["Archivo Narrow"],
+    "body-md":["Inter"],"label-sm":["Inter"],"body-sm":["Inter"],
+    "headline-lg":["Archivo Narrow"],"headline-md":["Archivo Narrow"],
+    "headline-lg-mobile":["Archivo Narrow"],"label-md":["Inter"],"body-lg":["Inter"]
+  }, fontSize:{
+    "headline-xl":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}],
+    "headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],
+    "body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],
+    "label-sm":["12px",{lineHeight:"14px",fontWeight:"700"}],
+    "body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}],
+    "headline-lg":["32px",{lineHeight:"40px",letterSpacing:"-0.01em",fontWeight:"700"}],
+    "headline-md":["24px",{lineHeight:"32px",fontWeight:"600"}],
+    "label-md":["14px",{lineHeight:"16px",letterSpacing:"0.05em",fontWeight:"600"}],
+    "body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}]
+  } } }
+}
+</script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .structural-depth {
-            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
-        }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24; }
+  .structural-depth { box-shadow: 4px 4px 0px 0px rgba(0,0,0,1); }
+  body { min-height: max(884px, 100dvh); }
 </style>
 </head>
 <body class="bg-background text-on-background font-body-md min-h-screen pb-32">
@@ -136,95 +73,9 @@
     <!-- Lista de produtos -->
     <section class="lg:col-span-8 flex flex-col gap-base">
       <div class="mb-4">
-        <span id="item-badge" class="bg-tertiary text-on-tertiary px-sm py-xs font-label-md text-label-md rounded-sm">3 ITENS NO CARRINHO</span>
+        <span id="item-badge" class="bg-tertiary text-on-tertiary px-sm py-xs font-label-md text-label-md rounded-sm">0 ITENS NO CARRINHO</span>
       </div>
-
-      <!-- Item 1 -->
-      <div class="cart-item bg-white border-2 border-outline-variant p-md flex flex-col sm:flex-row gap-md relative" data-price="1104.15">
-        <a href="produto.html?id=1" class="w-full sm:w-32 h-32 bg-surface-container-low flex items-center justify-center border border-outline-variant flex-shrink-0">
-          <img class="max-h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjHVe6xwB0C-RZhbotSz1Gkn2ovLsOlFOVQNw15aKg51AFEKNzsmV9HntsX-0-_c-ZCOl-Rmwp14hV8pF-CtbPxPR0b-N7V1vj7hiFQbXWTVosT1YMZL3cNY_Sd0WNX3tgus1UlvKB4MDRDdICj8tWDTAnVkChNglyHVXzTQV3K4eVgX1nt6DfFXTh1eJpY_xTFIrlDDbieWlX08pkyaSnJUfbn8y1cb-F57XnUGLVXELeAepKAWlC8ax9QVZweC8OWlcGNGlzY-Q" alt="Furadeira Makita"/>
-        </a>
-        <div class="flex-grow flex flex-col justify-between">
-          <div>
-            <a href="produto.html?id=1" class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight hover:text-primary transition-colors">Furadeira de Impacto Makita HP1640 - 680W</a>
-            <p class="text-secondary font-label-md text-label-md mt-1">Ref: MK-HP1640 · Makita</p>
-            <p class="text-secondary font-body-sm mt-xs">Motor Brushless 18V • Mandril 13mm • 50 Nm</p>
-          </div>
-          <div class="flex items-center justify-between mt-md">
-            <div class="flex items-center border-2 border-on-surface h-10">
-              <button class="px-3 hover:bg-surface-container-high transition-colors" onclick="updateQty(this, -1)">
-                <span class="material-symbols-outlined text-sm">remove</span>
-              </button>
-              <span class="qty px-4 font-bold border-x-2 border-on-surface">1</span>
-              <button class="px-3 hover:bg-surface-container-high transition-colors" onclick="updateQty(this, 1)">
-                <span class="material-symbols-outlined text-sm">add</span>
-              </button>
-            </div>
-            <span class="item-total font-headline-md text-headline-md text-on-surface">R$ 1.104,15</span>
-          </div>
-        </div>
-        <button onclick="removeItem(this)" class="absolute top-md right-md text-error hover:scale-110 transition-transform">
-          <span class="material-symbols-outlined">delete</span>
-        </button>
-      </div>
-
-      <!-- Item 2 -->
-      <div class="cart-item bg-white border-2 border-outline-variant p-md flex flex-col sm:flex-row gap-md relative" data-price="2450.00">
-        <a href="produto.html?id=2" class="w-full sm:w-32 h-32 bg-surface-container-low flex items-center justify-center border border-outline-variant flex-shrink-0">
-          <img class="max-h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjtea1Dsr63qfwjHr6FAl78BPpNBxgf9nCszWkWlu6Xfukr69wMuObuXh45jiHvS7g_iyhYeWBCRpjRbXMOBYVUZlycjEWAHy7uEDLYwL25G5hkftVp5-CF0kEd0HDoYh3SRiMtHT6W1F_xy3LNDjD5wsKzrHot1U_hE-txdd4RmFpZkLy6-RxSzb-80xpKQ5PKdBDU7EjH9gVPHvxP1F6vwh_Joou34WMbT8S65oHlp573bCWquN50fQTyhZrIxhytCgPXTekvFM" alt="Serra Circular DeWalt"/>
-        </a>
-        <div class="flex-grow flex flex-col justify-between">
-          <div>
-            <a href="produto.html?id=2" class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight hover:text-primary transition-colors">Serra Circular 7-1/4" FlexVolt 60V</a>
-            <p class="text-secondary font-label-md text-label-md mt-1">Ref: DW-DCS574 · DeWalt</p>
-            <p class="text-secondary font-body-sm mt-xs">60V • Disco 7-1/4" • 5.800 rpm • 3,2 kg</p>
-          </div>
-          <div class="flex items-center justify-between mt-md">
-            <div class="flex items-center border-2 border-on-surface h-10">
-              <button class="px-3 hover:bg-surface-container-high transition-colors" onclick="updateQty(this, -1)">
-                <span class="material-symbols-outlined text-sm">remove</span>
-              </button>
-              <span class="qty px-4 font-bold border-x-2 border-on-surface">1</span>
-              <button class="px-3 hover:bg-surface-container-high transition-colors" onclick="updateQty(this, 1)">
-                <span class="material-symbols-outlined text-sm">add</span>
-              </button>
-            </div>
-            <span class="item-total font-headline-md text-headline-md text-on-surface">R$ 2.450,00</span>
-          </div>
-        </div>
-        <button onclick="removeItem(this)" class="absolute top-md right-md text-error hover:scale-110 transition-transform">
-          <span class="material-symbols-outlined">delete</span>
-        </button>
-      </div>
-
-      <!-- Item 3 -->
-      <div class="cart-item bg-white border-2 border-outline-variant p-md flex flex-col sm:flex-row gap-md relative" data-price="412.00">
-        <a href="produto.html?id=5" class="w-full sm:w-32 h-32 bg-surface-container-low flex items-center justify-center border border-outline-variant flex-shrink-0">
-          <img class="max-h-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVHoC06yjsxtv1t7gMpDLX2XCcNrhmzojVH7kmyVcThSThnTkT4iNBXr-9_9VkGxjvOAc218TaUiSTB2Q6shQtlgtq5HCj7RtxYQXnsI8d2cMgR-L247FBh-S86RpcvR5HGQ7TSMNrPJsNl08lSEIQLQZckcELabHBN34akBmfVlp7dO-ERfsCX1lyPrnPJNgl7pvMILtmJyZgdAc78lUk2MPTMpIBdHY28K1zsau90dO8P4qb0TttbybdK6cv-jaCe2S87f9m8CM" alt="Esmerilhadeira Bosch"/>
-        </a>
-        <div class="flex-grow flex flex-col justify-between">
-          <div>
-            <a href="produto.html?id=5" class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight hover:text-primary transition-colors">Esmerilhadeira Angular 4-1/2" GWS 700</a>
-            <p class="text-secondary font-label-md text-label-md mt-1">Ref: BS-GWS700 · Bosch</p>
-            <p class="text-secondary font-body-sm mt-xs">710W • Disco 115mm • 11.000 rpm</p>
-          </div>
-          <div class="flex items-center justify-between mt-md">
-            <div class="flex items-center border-2 border-on-surface h-10">
-              <button class="px-3 hover:bg-surface-container-high transition-colors" onclick="updateQty(this, -1)">
-                <span class="material-symbols-outlined text-sm">remove</span>
-              </button>
-              <span class="qty px-4 font-bold border-x-2 border-on-surface">1</span>
-              <button class="px-3 hover:bg-surface-container-high transition-colors" onclick="updateQty(this, 1)">
-                <span class="material-symbols-outlined text-sm">add</span>
-              </button>
-            </div>
-            <span class="item-total font-headline-md text-headline-md text-on-surface">R$ 412,00</span>
-          </div>
-        </div>
-        <button onclick="removeItem(this)" class="absolute top-md right-md text-error hover:scale-110 transition-transform">
-          <span class="material-symbols-outlined">delete</span>
-        </button>
-      </div>
+      <div id="cart-list" class="flex flex-col gap-base"></div>
 
       <!-- Empty state -->
       <div id="empty-state" class="hidden flex-col items-center justify-center py-xl text-center border-2 border-dashed border-outline-variant">
@@ -240,9 +91,10 @@
       <div class="bg-white border-2 border-on-surface p-md">
         <h4 class="font-label-md text-label-md mb-base uppercase tracking-widest text-secondary">CUPOM DE DESCONTO</h4>
         <div class="flex gap-xs">
-          <input class="flex-grow bg-surface-container-low border-2 border-outline-variant px-sm font-label-md text-label-md focus:border-on-surface outline-none h-12 uppercase" placeholder="IMPERADOR10" type="text"/>
-          <button class="bg-on-surface text-white px-md font-label-md text-label-md hover:bg-secondary transition-colors">APLICAR</button>
+          <input id="coupon-input" class="flex-grow bg-surface-container-low border-2 border-outline-variant px-sm font-label-md text-label-md focus:border-on-surface outline-none h-12 uppercase" placeholder="IMPERADOR10" type="text"/>
+          <button onclick="applyCoupon()" class="bg-on-surface text-white px-md font-label-md text-label-md hover:bg-secondary transition-colors">APLICAR</button>
         </div>
+        <p id="coupon-msg" class="hidden font-label-sm text-label-sm mt-xs"></p>
       </div>
 
       <!-- Resumo -->
@@ -250,26 +102,26 @@
         <h4 class="font-headline-sm text-headline-sm mb-md uppercase border-b-2 border-outline-variant pb-base">RESUMO DO PEDIDO</h4>
         <div class="flex flex-col gap-sm border-b-2 border-outline-variant pb-md mb-md">
           <div class="flex justify-between items-center">
-            <span class="text-secondary font-label-md text-label-md uppercase">SUBTOTAL (<span id="summary-qty">3</span> itens)</span>
-            <span id="subtotal" class="font-body-lg text-body-lg font-bold">R$ 3.966,15</span>
+            <span class="text-secondary font-label-md text-label-md uppercase">SUBTOTAL</span>
+            <span id="subtotal" class="font-body-lg text-body-lg font-bold">R$ 0,00</span>
           </div>
           <div class="flex justify-between items-center">
             <span class="text-secondary font-label-md text-label-md uppercase">FRETE</span>
             <span class="font-body-lg text-body-lg text-tertiary font-bold">GRÁTIS</span>
           </div>
-          <div class="flex justify-between items-center">
+          <div id="discount-row" class="hidden flex justify-between items-center">
             <span class="text-secondary font-label-md text-label-md uppercase">DESCONTO</span>
-            <span id="discount" class="font-body-lg text-body-lg text-error font-bold">− R$ 0,00</span>
+            <span id="discount-val" class="font-body-lg text-body-lg text-error font-bold"></span>
           </div>
         </div>
         <div class="flex justify-between items-center mb-lg">
           <span class="font-headline-sm text-headline-sm uppercase">TOTAL</span>
           <div class="text-right">
-            <span id="total" class="block font-headline-md text-headline-md text-on-surface">R$ 3.966,15</span>
-            <span id="installments" class="block font-label-sm text-label-sm text-secondary">Ou 10x de R$ 396,62</span>
+            <span id="total" class="block font-headline-md text-headline-md text-on-surface">R$ 0,00</span>
+            <span id="installments" class="block font-label-sm text-label-sm text-secondary">Ou 10x de R$ 0,00</span>
           </div>
         </div>
-        <button class="w-full h-16 bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-bold uppercase flex items-center justify-center gap-sm structural-depth hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all active:scale-95">
+        <button id="checkout-btn" class="w-full h-16 bg-primary-container text-on-primary-fixed font-headline-sm text-headline-sm font-bold uppercase flex items-center justify-center gap-sm structural-depth hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all active:scale-95">
           FINALIZAR COMPRA
           <span class="material-symbols-outlined">arrow_forward</span>
         </button>
@@ -293,9 +145,10 @@
     <span class="material-symbols-outlined">grid_view</span>
     <span class="font-label-sm text-label-sm mt-1">Catálogo</span>
   </a>
-  <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 transition-all" href="carrinho.html">
-    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">shopping_cart</span>
+  <a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-4 py-1 active:scale-95 transition-all relative" href="carrinho.html">
+    <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">shopping_cart</span>
     <span class="font-label-sm text-label-sm mt-1">Carrinho</span>
+    <span class="cart-badge hidden absolute -top-1 -right-1 bg-error text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center"></span>
   </a>
   <a class="flex flex-col items-center justify-center text-secondary px-4 py-1 hover:text-primary active:scale-95 transition-all" href="#">
     <span class="material-symbols-outlined">person</span>
@@ -304,49 +157,146 @@
 </nav>
 
 <script>
-  function fmt(n) {
-    return 'R$ ' + n.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+const PRODUCTS = [null,
+  {name:"Furadeira de Impacto 18V LXT Brushless",brand:"Makita",ref:"MK-HP1640",price:1104.15,url:"produto.html?id=1",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCjHVe6xwB0C-RZhbotSz1Gkn2ovLsOlFOVQNw15aKg51AFEKNzsmV9HntsX-0-_c-ZCOl-Rmwp14hV8pF-CtbPxPR0b-N7V1vj7hiFQbXWTVosT1YMZL3cNY_Sd0WNX3tgus1UlvKB4MDRDdICj8tWDTAnVkChNglyHVXzTQV3K4eVgX1nt6DfFXTh1eJpY_xTFIrlDDbieWlX08pkyaSnJUfbn8y1cb-F57XnUGLVXELeAepKAWlC8ax9QVZweC8OWlcGNGlzY-Q"},
+  {name:'Serra Circular 7-1/4" FlexVolt 60V',brand:"DeWalt",ref:"DW-DCS574",price:2450.00,url:"produto.html?id=2",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAjtea1Dsr63qfwjHr6FAl78BPpNBxgf9nCszWkWlu6Xfukr69wMuObuXh45jiHvS7g_iyhYeWBCRpjRbXMOBYVUZlycjEWAHy7uEDLYwL25G5hkftVp5-CF0kEd0HDoYh3SRiMtHT6W1F_xy3LNDjD5wsKzrHot1U_hE-txdd4RmFpZkLy6-RxSzb-80xpKQ5PKdBDU7EjH9gVPHvxP1F6vwh_Joou34WMbT8S65oHlp573bCWquN50fQTyhZrIxhytCgPXTekvFM"},
+  {name:"Inversora de Solda 160A Profissional",brand:"Bosch",ref:"BS-GWS160",price:899.00,url:"produto.html?id=3",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCo8RXY6p3pjYnp5JAxOnfOnlkOPUJoGnzzJQR10KDNXArLpOURyjpxPDYUTajI8ivdw3Xur3cem1sqLklLEQPUV_w_ju6bfdVelwGLnmh0F9lA8IYpAY9U2N5hqpEpVBLXcRbY6lvJwKxiDOORu5lqa8E3bhJu-jiFuny_oqlGpIp_FG3raZONQ1KkB-HJ6RyQ-0uijf9kixGYHR0oT-5lcdIBIeJS3GVJEzitz6u5zv9su0_OSn1dneDBiWM65aInUrk-pVIa4rI"},
+  {name:"Parafusadeira de Impacto 18V LXT",brand:"Makita",ref:"MK-DTD157",price:729.90,url:"produto.html?id=4",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuC1lcZ36MUNWeZW8WKANXwmpL_9Fiw2RVxc-hCdC9N2zWkS2HrL_WkVcOemWqw1wuVeCyZ8wauectcirKt7HAENFuLjNMqCSY6kIMlqKIYBE1IKoFXxPnZLhnA129SCcNS8tPl3lHa-AtWk_EuJ5UTzq_AOTAfu5ZU4jSMkekGOklDLV5t78Tr-Pm5v6OBztlTpEYpgJm6Y07u7T9_7yLhco3S3Pu1NIdtRs8o0fCVGVhd0aHyVnGqdoP_zO-NfDOyrYdKr2jKnHKs"},
+  {name:'Esmerilhadeira Angular 4-1/2" 710W',brand:"Bosch",ref:"BS-GWS700",price:412.00,url:"produto.html?id=5",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAVHoC06yjsxtv1t7gMpDLX2XCcNrhmzojVH7kmyVcThSThnTkT4iNBXr-9_9VkGxjvOAc218TaUiSTB2Q6shQtlgtq5HCj7RtxYQXnsI8d2cMgR-L247FBh-S86RpcvR5HGQ7TSMNrPJsNl08lSEIQLQZckcELabHBN34akBmfVlp7dO-ERfsCX1lyPrnPJNgl7pvMILtmJyZgdAc78lUk2MPTMpIBdHY28K1zsau90dO8P4qb0TttbybdK6cv-jaCe2S87f9m8CM"},
+  {name:"Martelete Perfurador SDS-Plus 800W",brand:"Bosch",ref:"BS-GBH248",price:1150.00,url:"produto.html?id=6",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCiGeqCwL2qrFPCU_HNDO4pbd0dRBIdxPYq7BzZgM0OI5yc2_sd9Sjssf6a4f2G06XF3MUEjnPvIpM6aCxcBMKPbsjQ2bohDiIYtvNiRAonaerAMtcN_XBPFm5ne1QqKT_WCcNCNQUCJ4HEBGjpQCw5xxgA5CQvMsdHG-czIGf6sGh9-ruZLLdceG8ccCbdKuEib6Zu3k_3m5AlfG4BstcwA8_SESoxrf-puA3UgwTxFFoAtoV6i-0gI8VwcwpNoNILlDPQLPNCSPg"},
+  {name:"Serra Tico-Tico 650W 5 Velocidades",brand:"DeWalt",ref:"DW-DCS331",price:649.90,url:"produto.html?id=7",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAjtea1Dsr63qfwjHr6FAl78BPpNBxgf9nCszWkWlu6Xfukr69wMuObuXh45jiHvS7g_iyhYeWBCRpjRbXMOBYVUZlycjEWAHy7uEDLYwL25G5hkftVp5-CF0kEd0HDoYh3SRiMtHT6W1F_xy3LNDjD5wsKzrHot1U_hE-txdd4RmFpZkLy6-RxSzb-80xpKQ5PKdBDU7EjH9gVPHvxP1F6vwh_Joou34WMbT8S65oHlp573bCWquN50fQTyhZrIxhytCgPXTekvFM"},
+  {name:"Lixadeira Orbital Aleatória 300W",brand:"Makita",ref:"MK-BO5031",price:389.00,url:"produto.html?id=8",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuC1lcZ36MUNWeZW8WKANXwmpL_9Fiw2RVxc-hCdC9N2zWkS2HrL_WkVcOemWqw1wuVeCyZ8wauectcirKt7HAENFuLjNMqCSY6kIMlqKIYBE1IKoFXxPnZLhnA129SCcNS8tPl3lHa-AtWk_EuJ5UTzq_AOTAfu5ZU4jSMkekGOklDLV5t78Tr-Pm5v6OBztlTpEYpgJm6Y07u7T9_7yLhco3S3Pu1NIdtRs8o0fCVGVhd0aHyVnGqdoP_zO-NfDOyrYdKr2jKnHKs"},
+  {name:"Furadeira Parafusadeira 12V Max CXT",brand:"Makita",ref:"MK-DF333",price:549.00,url:"produto.html?id=9",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCjHVe6xwB0C-RZhbotSz1Gkn2ovLsOlFOVQNw15aKg51AFEKNzsmV9HntsX-0-_c-ZCOl-Rmwp14hV8pF-CtbPxPR0b-N7V1vj7hiFQbXWTVosT1YMZL3cNY_Sd0WNX3tgus1UlvKB4MDRDdICj8tWDTAnVkChNglyHVXzTQV3K4eVgX1nt6DfFXTh1eJpY_xTFIrlDDbieWlX08pkyaSnJUfbn8y1cb-F57XnUGLVXELeAepKAWlC8ax9QVZweC8OWlcGNGlzY-Q"},
+  {name:"Nível Laser de Linhas Cruzadas GLL 2-15",brand:"Bosch",ref:"BS-GLL215",price:890.00,url:"produto.html?id=10",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCiGeqCwL2qrFPCU_HNDO4pbd0dRBIdxPYq7BzZgM0OI5yc2_sd9Sjssf6a4f2G06XF3MUEjnPvIpM6aCxcBMKPbsjQ2bohDiIYtvNiRAonaerAMtcN_XBPFm5ne1QqKT_WCcNCNQUCJ4HEBGjpQCw5xxgA5CQvMsdHG-czIGf6sGh9-ruZLLdceG8ccCbdKuEib6Zu3k_3m5AlfG4BstcwA8_SESoxrf-puA3UgwTxFFoAtoV6i-0gI8VwcwpNoNILlDPQLPNCSPg"},
+  {name:"Serra de Sabre 1100W FlexVolt",brand:"DeWalt",ref:"DW-DCS380",price:780.00,url:"produto.html?id=11",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAjtea1Dsr63qfwjHr6FAl78BPpNBxgf9nCszWkWlu6Xfukr69wMuObuXh45jiHvS7g_iyhYeWBCRpjRbXMOBYVUZlycjEWAHy7uEDLYwL25G5hkftVp5-CF0kEd0HDoYh3SRiMtHT6W1F_xy3LNDjD5wsKzrHot1U_hE-txdd4RmFpZkLy6-RxSzb-80xpKQ5PKdBDU7EjH9gVPHvxP1F6vwh_Joou34WMbT8S65oHlp573bCWquN50fQTyhZrIxhytCgPXTekvFM"},
+  {name:"Compressor de Ar 2HP 50L CSI 8.5",brand:"Schulz",ref:"SZ-CSI85",price:1890.00,url:"produto.html?id=12",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCo8RXY6p3pjYnp5JAxOnfOnlkOPUJoGnzzJQR10KDNXArLpOURyjpxPDYUTajI8ivdw3Xur3cem1sqLklLEQPUV_w_ju6bfdVelwGLnmh0F9lA8IYpAY9U2N5hqpEpVBLXcRbY6lvJwKxiDOORu5lqa8E3bhJu-jiFuny_oqlGpIp_FG3raZONQ1KkB-HJ6RyQ-0uijf9kixGYHR0oT-5lcdIBIeJS3GVJEzitz6u5zv9su0_OSn1dneDBiWM65aInUrk-pVIa4rI"},
+  {name:'Politriz Roto-Orbital 900W 6"',brand:"DeWalt",ref:"DW-DWP849",price:1250.00,url:"produto.html?id=13",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAVHoC06yjsxtv1t7gMpDLX2XCcNrhmzojVH7kmyVcThSThnTkT4iNBXr-9_9VkGxjvOAc218TaUiSTB2Q6shQtlgtq5HCj7RtxYQXnsI8d2cMgR-L247FBh-S86RpcvR5HGQ7TSMNrPJsNl08lSEIQLQZckcELabHBN34akBmfVlp7dO-ERfsCX1lyPrnPJNgl7pvMILtmJyZgdAc78lUk2MPTMpIBdHY28K1zsau90dO8P4qb0TttbybdK6cv-jaCe2S87f9m8CM"},
+  {name:"Parafusadeira de Impacto 20V M18 FUEL",brand:"Milwaukee",ref:"MW-M18FID",price:1680.00,url:"produto.html?id=14",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCjHVe6xwB0C-RZhbotSz1Gkn2ovLsOlFOVQNw15aKg51AFEKNzsmV9HntsX-0-_c-ZCOl-Rmwp14hV8pF-CtbPxPR0b-N7V1vj7hiFQbXWTVosT1YMZL3cNY_Sd0WNX3tgus1UlvKB4MDRDdICj8tWDTAnVkChNglyHVXzTQV3K4eVgX1nt6DfFXTh1eJpY_xTFIrlDDbieWlX08pkyaSnJUfbn8y1cb-F57XnUGLVXELeAepKAWlC8ax9QVZweC8OWlcGNGlzY-Q"},
+  {name:"Medidor a Laser 50m GLM 50 C",brand:"Bosch",ref:"BS-GLM50C",price:590.00,url:"produto.html?id=15",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCiGeqCwL2qrFPCU_HNDO4pbd0dRBIdxPYq7BzZgM0OI5yc2_sd9Sjssf6a4f2G06XF3MUEjnPvIpM6aCxcBMKPbsjQ2bohDiIYtvNiRAonaerAMtcN_XBPFm5ne1QqKT_WCcNCNQUCJ4HEBGjpQCw5xxgA5CQvMsdHG-czIGf6sGh9-ruZLLdceG8ccCbdKuEib6Zu3k_3m5AlfG4BstcwA8_SESoxrf-puA3UgwTxFFoAtoV6i-0gI8VwcwpNoNILlDPQLPNCSPg"},
+  {name:"Kit Brocas SDS-Plus 5 Peças Expert",brand:"Bosch",ref:"BS-SDS5PC",price:189.90,url:"produto.html?id=16",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCSHvstLcAFebHzla7KFW2kovxgeHyuXr_RNgd8QFQS41IXbzYkL-7adawWC0LNxHZDpuRlyjATJlhLCX63oJ00IEjyy9Q47uncldw1EQyONRL26r3r8y-jvcyGl9itrW6fHAciolTsOVAeGpkLhcwvFJFGLRoKddk4_ExuSrWcizufQkxfZNIxWUgFaiWuqYEAtGGG-qFgd_LAlCJuzY33fGO4gERFGvfDTVU8Da1bnwo-CGM35YNswDsXI9g14C6t7WCWjsi-i_E"},
+  {name:"Jogo de Brocas Metal 19 Peças D-37194",brand:"Makita",ref:"MK-D37194",price:149.90,url:"produto.html?id=17",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCSHvstLcAFebHzla7KFW2kovxgeHyuXr_RNgd8QFQS41IXbzYkL-7adawWC0LNxHZDpuRlyjATJlhLCX63oJ00IEjyy9Q47uncldw1EQyONRL26r3r8y-jvcyGl9itrW6fHAciolTsOVAeGpkLhcwvFJFGLRoKddk4_ExuSrWcizufQkxfZNIxWUgFaiWuqYEAtGGG-qFgd_LAlCJuzY33fGO4gERFGvfDTVU8Da1bnwo-CGM35YNswDsXI9g14C6t7WCWjsi-i_E"},
+  {name:'Serra Mármore 1500W 4-3/8" SG1251',brand:"Makita",ref:"MK-SG1251",price:870.00,url:"produto.html?id=18",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAjtea1Dsr63qfwjHr6FAl78BPpNBxgf9nCszWkWlu6Xfukr69wMuObuXh45jiHvS7g_iyhYeWBCRpjRbXMOBYVUZlycjEWAHy7uEDLYwL25G5hkftVp5-CF0kEd0HDoYh3SRiMtHT6W1F_xy3LNDjD5wsKzrHot1U_hE-txdd4RmFpZkLy6-RxSzb-80xpKQ5PKdBDU7EjH9gVPHvxP1F6vwh_Joou34WMbT8S65oHlp573bCWquN50fQTyhZrIxhytCgPXTekvFM"},
+  {name:"Aspirador Industrial 30L 1400W",brand:"DeWalt",ref:"DW-DWV901L",price:1190.00,url:"produto.html?id=19",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCo8RXY6p3pjYnp5JAxOnfOnlkOPUJoGnzzJQR10KDNXArLpOURyjpxPDYUTajI8ivdw3Xur3cem1sqLklLEQPUV_w_ju6bfdVelwGLnmh0F9lA8IYpAY9U2N5hqpEpVBLXcRbY6lvJwKxiDOORu5lqa8E3bhJu-jiFuny_oqlGpIp_FG3raZONQ1KkB-HJ6RyQ-0uijf9kixGYHR0oT-5lcdIBIeJS3GVJEzitz6u5zv9su0_OSn1dneDBiWM65aInUrk-pVIa4rI"},
+  {name:"Furadeira de Impacto 20V Brushless M18",brand:"Milwaukee",ref:"MW-M18BPD",price:1450.00,url:"produto.html?id=20",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCjHVe6xwB0C-RZhbotSz1Gkn2ovLsOlFOVQNw15aKg51AFEKNzsmV9HntsX-0-_c-ZCOl-Rmwp14hV8pF-CtbPxPR0b-N7V1vj7hiFQbXWTVosT1YMZL3cNY_Sd0WNX3tgus1UlvKB4MDRDdICj8tWDTAnVkChNglyHVXzTQV3K4eVgX1nt6DfFXTh1eJpY_xTFIrlDDbieWlX08pkyaSnJUfbn8y1cb-F57XnUGLVXELeAepKAWlC8ax9QVZweC8OWlcGNGlzY-Q"},
+  {name:'Serra de Bancada 10" 1800W DWE7491',brand:"DeWalt",ref:"DW-DWE7491",price:3290.00,url:"produto.html?id=21",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAjtea1Dsr63qfwjHr6FAl78BPpNBxgf9nCszWkWlu6Xfukr69wMuObuXh45jiHvS7g_iyhYeWBCRpjRbXMOBYVUZlycjEWAHy7uEDLYwL25G5hkftVp5-CF0kEd0HDoYh3SRiMtHT6W1F_xy3LNDjD5wsKzrHot1U_hE-txdd4RmFpZkLy6-RxSzb-80xpKQ5PKdBDU7EjH9gVPHvxP1F6vwh_Joou34WMbT8S65oHlp573bCWquN50fQTyhZrIxhytCgPXTekvFM"},
+  {name:"Parafusadeira Drywall 6.35mm GTB 650",brand:"Bosch",ref:"BS-GTB650",price:580.00,url:"produto.html?id=22",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuC1lcZ36MUNWeZW8WKANXwmpL_9Fiw2RVxc-hCdC9N2zWkS2HrL_WkVcOemWqw1wuVeCyZ8wauectcirKt7HAENFuLjNMqCSY6kIMlqKIYBE1IKoFXxPnZLhnA129SCcNS8tPl3lHa-AtWk_EuJ5UTzq_AOTAfu5ZU4jSMkekGOklDLV5t78Tr-Pm5v6OBztlTpEYpgJm6Y07u7T9_7yLhco3S3Pu1NIdtRs8o0fCVGVhd0aHyVnGqdoP_zO-NfDOyrYdKr2jKnHKs"},
+  {name:'Furadeira de Bancada 350W 5/8" MT606',brand:"Makita",ref:"MK-MT606",price:950.00,url:"produto.html?id=23",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuCiGeqCwL2qrFPCU_HNDO4pbd0dRBIdxPYq7BzZgM0OI5yc2_sd9Sjssf6a4f2G06XF3MUEjnPvIpM6aCxcBMKPbsjQ2bohDiIYtvNiRAonaerAMtcN_XBPFm5ne1QqKT_WCcNCNQUCJ4HEBGjpQCw5xxgA5CQvMsdHG-czIGf6sGh9-ruZLLdceG8ccCbdKuEib6Zu3k_3m5AlfG4BstcwA8_SESoxrf-puA3UgwTxFFoAtoV6i-0gI8VwcwpNoNILlDPQLPNCSPg"},
+  {name:"Soprador Térmico 2000W GHG 20-63",brand:"Bosch",ref:"BS-GHG2063",price:320.00,url:"produto.html?id=24",img:"https://lh3.googleusercontent.com/aida-public/AB6AXuAVHoC06yjsxtv1t7gMpDLX2XCcNrhmzojVH7kmyVcThSThnTkT4iNBXr-9_9VkGxjvOAc218TaUiSTB2Q6shQtlgtq5HCj7RtxYQXnsI8d2cMgR-L247FBh-S86RpcvR5HGQ7TSMNrPJsNl08lSEIQLQZckcELabHBN34akBmfVlp7dO-ERfsCX1lyPrnPJNgl7pvMILtmJyZgdAc78lUk2MPTMpIBdHY28K1zsau90dO8P4qb0TttbybdK6cv-jaCe2S87f9m8CM"},
+];
+
+const COUPONS = { 'IMPERADOR10': 0.10, 'FERRAMENTA15': 0.15, 'FRETE20': 0.20 };
+let activeCoupon = null;
+
+function fmt(n) {
+  return 'R$ ' + n.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+
+function recalc() {
+  const items = Cart.get();
+  let sub = 0, qty = 0;
+  items.forEach(i => {
+    const p = PRODUCTS[i.id];
+    if (p) { sub += p.price * i.qty; qty += i.qty; }
+  });
+  const disc   = activeCoupon ? sub * COUPONS[activeCoupon] : 0;
+  const total  = sub - disc;
+
+  document.getElementById('subtotal').textContent     = fmt(sub);
+  document.getElementById('total').textContent        = fmt(total);
+  document.getElementById('installments').textContent = `Ou 10x de ${fmt(total / 10)}`;
+  document.getElementById('item-badge').textContent   = `${qty} ${qty===1?'ITEM':'ITENS'} NO CARRINHO`;
+
+  const discRow = document.getElementById('discount-row');
+  if (disc > 0) {
+    discRow.classList.remove('hidden');
+    discRow.classList.add('flex');
+    document.getElementById('discount-val').textContent = `− ${fmt(disc)}`;
+  } else {
+    discRow.classList.add('hidden');
+    discRow.classList.remove('flex');
   }
 
-  function recalc() {
-    const items = document.querySelectorAll('.cart-item:not([style*="none"])');
-    let total = 0, qty = 0;
+  document.getElementById('checkout-btn').disabled = qty === 0;
+}
 
-    items.forEach(item => {
-      const price = parseFloat(item.dataset.price);
-      const q     = parseInt(item.querySelector('.qty').textContent);
-      const line  = price * q;
-      item.querySelector('.item-total').textContent = fmt(line);
-      total += line;
-      qty   += q;
-    });
+function renderCart() {
+  const items = Cart.get();
+  const list  = document.getElementById('cart-list');
+  const empty = document.getElementById('empty-state');
 
-    document.getElementById('subtotal').textContent     = fmt(total);
-    document.getElementById('total').textContent        = fmt(total);
-    document.getElementById('installments').textContent = `Ou 10x de ${fmt(total / 10)}`;
-    document.getElementById('summary-qty').textContent  = qty;
-    document.getElementById('item-badge').textContent   = `${qty} ${qty === 1 ? 'ITEM' : 'ITENS'} NO CARRINHO`;
+  if (!items.length) {
+    list.innerHTML = '';
+    empty.classList.remove('hidden'); empty.classList.add('flex');
+    recalc(); return;
   }
+  empty.classList.add('hidden'); empty.classList.remove('flex');
 
-  function updateQty(btn, delta) {
-    const item = btn.closest('.cart-item');
-    const qtyEl = item.querySelector('.qty');
-    let q = parseInt(qtyEl.textContent) + delta;
-    if (q < 1) q = 1;
-    qtyEl.textContent = q;
-    recalc();
-  }
+  list.innerHTML = items.map(item => {
+    const p = PRODUCTS[item.id];
+    if (!p) return '';
+    return `
+    <div class="bg-white border-2 border-outline-variant p-md flex flex-col sm:flex-row gap-md relative">
+      <a href="${p.url}" class="w-full sm:w-32 h-32 bg-surface-container-low flex items-center justify-center border border-outline-variant flex-shrink-0">
+        <img class="max-h-full object-contain" src="${p.img}" alt="${p.name}"/>
+      </a>
+      <div class="flex-grow flex flex-col justify-between">
+        <div>
+          <a href="${p.url}" class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight hover:text-primary transition-colors">${p.name}</a>
+          <p class="text-secondary font-label-md text-label-md mt-1">Ref: ${p.ref} · ${p.brand}</p>
+        </div>
+        <div class="flex items-center justify-between mt-md">
+          <div class="flex items-center border-2 border-on-surface h-10">
+            <button class="px-3 hover:bg-surface-container-high transition-colors" onclick="changeQty(${item.id},-1)">
+              <span class="material-symbols-outlined text-sm">remove</span>
+            </button>
+            <span class="px-4 font-bold border-x-2 border-on-surface">${item.qty}</span>
+            <button class="px-3 hover:bg-surface-container-high transition-colors" onclick="changeQty(${item.id},1)">
+              <span class="material-symbols-outlined text-sm">add</span>
+            </button>
+          </div>
+          <span class="font-headline-md text-headline-md text-on-surface">${fmt(p.price * item.qty)}</span>
+        </div>
+      </div>
+      <button onclick="removeItem(${item.id})" class="absolute top-md right-md text-error hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined">delete</span>
+      </button>
+    </div>`;
+  }).join('');
+  recalc();
+}
 
-  function removeItem(btn) {
-    const item = btn.closest('.cart-item');
-    item.style.display = 'none';
-    recalc();
-    const remaining = document.querySelectorAll('.cart-item:not([style*="none"])').length;
-    if (remaining === 0) {
-      document.getElementById('empty-state').classList.remove('hidden');
-      document.getElementById('empty-state').classList.add('flex');
-    }
+function changeQty(id, delta) {
+  const items = Cart.get();
+  const item  = items.find(i => i.id === id);
+  if (!item) return;
+  const nq = item.qty + delta;
+  if (nq < 1) { removeItem(id); return; }
+  Cart.setQty(id, nq);
+  renderCart();
+}
+
+function removeItem(id) {
+  Cart.remove(id);
+  renderCart();
+}
+
+function applyCoupon() {
+  const code = document.getElementById('coupon-input').value.trim().toUpperCase();
+  const msg  = document.getElementById('coupon-msg');
+  msg.classList.remove('hidden');
+  if (COUPONS[code]) {
+    activeCoupon = code;
+    msg.textContent = `✓ Cupom aplicado: ${Math.round(COUPONS[code]*100)}% de desconto`;
+    msg.className = 'font-label-sm text-label-sm mt-xs text-green-600';
+  } else {
+    activeCoupon = null;
+    msg.textContent = '✗ Cupom inválido';
+    msg.className = 'font-label-sm text-label-sm mt-xs text-error';
   }
+  recalc();
+}
+
+document.addEventListener('DOMContentLoaded', renderCart);
 </script>
 </body>
 </html>
