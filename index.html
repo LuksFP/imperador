@@ -145,8 +145,13 @@
 </div>
 </header>
 <main class="pb-24">
-<!-- Hero Banner -->
-<section class="relative w-full overflow-hidden bg-inverse-surface h-[500px] md:h-[600px] flex items-center px-margin-mobile md:px-margin-desktop">
+<!-- Hero Carousel -->
+<section id="hero-carousel" class="relative w-full overflow-hidden bg-inverse-surface h-[500px] md:h-[600px]">
+<!-- Slides -->
+<div id="slides" class="relative w-full h-full">
+
+<!-- Slide 1 -->
+<div class="hero-slide absolute inset-0 flex items-center px-margin-mobile md:px-margin-desktop transition-opacity duration-700 opacity-100">
 <div class="absolute inset-0 opacity-40 mix-blend-overlay">
 <div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
 </div>
@@ -156,10 +161,96 @@
 <p class="font-body-lg text-body-lg text-secondary-fixed mb-lg max-w-lg">Ferramentas de alta performance para quem exige precisão e durabilidade no campo de batalha do trabalho pesado.</p>
 <div class="flex gap-md">
 <a href="catalogo.html" class="bg-primary-container text-on-primary-container px-xl py-md font-headline-sm text-headline-sm font-bold uppercase transition-transform active:scale-95 shadow-[4px_4px_0_0_rgba(0,0,0,1)]">Ver Catálogo</a>
-<button class="border-2 border-white text-white px-xl py-md font-headline-sm text-headline-sm font-bold uppercase hover:bg-white/10 transition-colors">Ofertas</button>
+<a href="catalogo.html?cat=ofertas" class="border-2 border-white text-white px-xl py-md font-headline-sm text-headline-sm font-bold uppercase hover:bg-white/10 transition-colors flex items-center">Ofertas</a>
 </div>
 </div>
+</div>
+
+<!-- Slide 2: Makita -->
+<div class="hero-slide absolute inset-0 flex items-center px-margin-mobile md:px-margin-desktop transition-opacity duration-700 opacity-0 pointer-events-none">
+<div class="absolute inset-0 opacity-20">
+<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1504148455328-c376907d081c?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+</div>
+<div class="relative z-10 grid md:grid-cols-2 items-center w-full max-w-6xl mx-auto gap-lg">
+<div>
+<span class="inline-block bg-error text-white font-label-sm text-label-sm px-md py-xs mb-md uppercase tracking-widest">-15% OFF</span>
+<h2 class="font-headline-xl text-headline-xl text-white mb-md leading-none">Furadeira de Impacto 18V LXT</h2>
+<p class="font-body-lg text-body-lg text-secondary-fixed mb-sm max-w-lg">Motor Brushless de alta eficiência. Concreto, madeira e metal com precisão profissional.</p>
+<p class="font-headline-lg text-headline-lg text-primary-container mb-lg">R$ 1.104,15 <span class="text-body-md text-white/60 line-through">R$ 1.299,00</span></p>
+<a href="produto.html?id=1" class="inline-block bg-primary-container text-on-primary-container px-xl py-md font-headline-sm text-headline-sm font-bold uppercase transition-transform active:scale-95 shadow-[4px_4px_0_0_rgba(0,0,0,1)]">Comprar Agora</a>
+</div>
+<div class="hidden md:flex justify-center">
+<img class="max-h-80 object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjHVe6xwB0C-RZhbotSz1Gkn2ovLsOlFOVQNw15aKg51AFEKNzsmV9HntsX-0-_c-ZCOl-Rmwp14hV8pF-CtbPxPR0b-N7V1vj7hiFQbXWTVosT1YMZL3cNY_Sd0WNX3tgus1UlvKB4MDRDdICj8tWDTAnVkChNglyHVXzTQV3K4eVgX1nt6DfFXTh1eJpY_xTFIrlDDbieWlX08pkyaSnJUfbn8y1cb-F57XnUGLVXELeAepKAWlC8ax9QVZweC8OWlcGNGlzY-Q" alt="Furadeira Makita"/>
+</div>
+</div>
+</div>
+
+<!-- Slide 3: DeWalt -->
+<div class="hero-slide absolute inset-0 flex items-center px-margin-mobile md:px-margin-desktop transition-opacity duration-700 opacity-0 pointer-events-none">
+<div class="absolute inset-0 opacity-20">
+<div class="w-full h-full bg-[url('https://images.unsplash.com/photo-1572981779307-38b8cabb2407?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center"></div>
+</div>
+<div class="relative z-10 grid md:grid-cols-2 items-center w-full max-w-6xl mx-auto gap-lg">
+<div>
+<span class="inline-block bg-primary-container text-on-primary-container font-label-sm text-label-sm px-md py-xs mb-md uppercase tracking-widest">Mais Vendido</span>
+<h2 class="font-headline-xl text-headline-xl text-white mb-md leading-none">Serra Circular FlexVolt 60V</h2>
+<p class="font-body-lg text-body-lg text-secondary-fixed mb-sm max-w-lg">Corte limpo e potente em madeira, compensado e materiais compostos. Sem fio, sem limites.</p>
+<p class="font-headline-lg text-headline-lg text-primary-container mb-lg">R$ 2.450,00</p>
+<a href="produto.html?id=2" class="inline-block bg-primary-container text-on-primary-container px-xl py-md font-headline-sm text-headline-sm font-bold uppercase transition-transform active:scale-95 shadow-[4px_4px_0_0_rgba(0,0,0,1)]">Comprar Agora</a>
+</div>
+<div class="hidden md:flex justify-center">
+<img class="max-h-80 object-contain drop-shadow-2xl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjtea1Dsr63qfwjHr6FAl78BPpNBxgf9nCszWkWlu6Xfukr69wMuObuXh45jiHvS7g_iyhYeWBCRpjRbXMOBYVUZlycjEWAHy7uEDLYwL25G5hkftVp5-CF0kEd0HDoYh3SRiMtHT6W1F_xy3LNDjD5wsKzrHot1U_hE-txdd4RmFpZkLy6-RxSzb-80xpKQ5PKdBDU7EjH9gVPHvxP1F6vwh_Joou34WMbT8S65oHlp573bCWquN50fQTyhZrIxhytCgPXTekvFM" alt="Serra Circular DeWalt"/>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Setas -->
+<button id="hero-prev" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-black/40 hover:bg-primary-container hover:text-on-primary-container text-white flex items-center justify-center transition-colors border-2 border-white/30">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button id="hero-next" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 md:w-12 md:h-12 bg-black/40 hover:bg-primary-container hover:text-on-primary-container text-white flex items-center justify-center transition-colors border-2 border-white/30">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+
+<!-- Indicadores -->
+<div id="hero-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2"></div>
 </section>
+
+<script>
+(function(){
+  const slides = Array.from(document.querySelectorAll('#slides .hero-slide'));
+  const dotsBox = document.getElementById('hero-dots');
+  let idx = 0, timer;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'w-3 h-3 rounded-full transition-colors border border-white ' + (i===0?'bg-primary-container':'bg-white/30');
+    dot.addEventListener('click', () => go(i));
+    dotsBox.appendChild(dot);
+  });
+  const dots = Array.from(dotsBox.children);
+
+  function go(n){
+    slides[idx].classList.replace('opacity-100','opacity-0');
+    slides[idx].classList.add('pointer-events-none');
+    dots[idx].classList.replace('bg-primary-container','bg-white/30');
+    idx = (n + slides.length) % slides.length;
+    slides[idx].classList.replace('opacity-0','opacity-100');
+    slides[idx].classList.remove('pointer-events-none');
+    dots[idx].classList.replace('bg-white/30','bg-primary-container');
+    reset();
+  }
+  function next(){ go(idx+1); }
+  function prev(){ go(idx-1); }
+  function reset(){ clearInterval(timer); timer = setInterval(next, 5000); }
+
+  document.getElementById('hero-next').addEventListener('click', next);
+  document.getElementById('hero-prev').addEventListener('click', prev);
+  reset();
+})();
+</script>
 <!-- Quick Categories -->
 <section class="py-xl px-margin-mobile md:px-margin-desktop bg-surface">
 <div class="flex flex-wrap justify-center gap-lg md:gap-xl">
